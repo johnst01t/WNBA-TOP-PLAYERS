@@ -42,14 +42,6 @@ jobs:
           mkdir -p model_debug
           python tools/build_chronological_lineup_impact_v3.py --output-dir Chronological_Lineup_Impact 2>&1 | tee model_debug/model.log
           printf '%s\n' "${PIPESTATUS[0]}" > model_debug/exit_code.txt
-      - name: Record model log
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add model_debug
-          git commit -m 'Record chronological model log [skip ci]'
-          git pull --rebase origin chatgpt-wnba-data-update-20260724
-          git push origin HEAD:chatgpt-wnba-data-update-20260724
       - name: Stop if model failed
         run: test "$(cat model_debug/exit_code.txt)" = "0"
       - name: Archive outputs
@@ -75,6 +67,7 @@ jobs:
           cp Chronological_Lineup_Impact/audit.json impact_status/audit.json
           cp Chronological_Lineup_Impact/methodology.txt impact_status/methodology.txt
           head -n 21 Chronological_Lineup_Impact/player_game_impact.csv > impact_status/top20.csv
+          cp model_debug/model.log impact_status/model.log
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add update_status impact_status
