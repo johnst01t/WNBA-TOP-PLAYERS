@@ -1,0 +1,25 @@
+{
+  "games": 37,
+  "plays": 14769,
+  "player_box_rows": 890,
+  "first_game": {
+    "game_id": 401857054,
+    "date_time": "2026-07-10T23:32:58Z",
+    "away_team": "GS",
+    "home_team": "CON",
+    "away_final_score": 79,
+    "home_final_score": 64,
+    "play_rows": 363,
+    "source_url": "https://raw.githubusercontent.com/sportsdataverse/wehoop-wnba-raw/main/wnba/json/final/401857054.json"
+  },
+  "last_game": {
+    "game_id": 401857091,
+    "date_time": "2026-07-23T02:16:01Z",
+    "away_team": "DAL",
+    "home_team": "POR",
+    "away_final_score": 101,
+    "home_final_score": 97,
+    "play_rows": 390,
+    "source_url": "https://raw.githubusercontent.com/sportsdataverse/wehoop-wnba-raw/main/wnba/json/final/401857091.json"
+  }
+}
