@@ -8,6 +8,7 @@ on:
       - impact_status/**
       - inspect_status/**
       - model_debug/**
+      - impact_runs/**
 permissions:
   contents: write
 jobs:
@@ -58,19 +59,38 @@ jobs:
           name: WNBA-2026-chronological-lineup-impact
           path: WNBA_2026_Chronological_Lineup_Impact_CSVs.zip
           retention-days: 7
-      - name: Record run and audit
+      - name: Publish audit files by GitHub API
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ github.run_id }}
         run: |
-          mkdir -p update_status impact_status
-          printf '%s\n' '${{ github.run_id }}' > update_status/run_id.txt
-          cp WNBA_2026_New_Games/audit.json update_status/audit.json
-          printf '%s\n' '${{ github.run_id }}' > impact_status/run_id.txt
-          cp Chronological_Lineup_Impact/audit.json impact_status/audit.json
-          cp Chronological_Lineup_Impact/methodology.txt impact_status/methodology.txt
-          head -n 21 Chronological_Lineup_Impact/player_game_impact.csv > impact_status/top20.csv
-          cp model_debug/model.log impact_status/model.log
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add update_status impact_status
-          git commit -m 'Record WNBA chronological impact update [skip ci]'
-          git pull --rebase origin chatgpt-wnba-data-update-20260724
-          git push origin HEAD:chatgpt-wnba-data-update-20260724
+          head -n 21 Chronological_Lineup_Impact/player_game_impact.csv > /tmp/top20.csv
+          python - <<'PY'
+          import base64, json, os, urllib.request
+          repo = os.environ['GITHUB_REPOSITORY']
+          branch = 'chatgpt-wnba-data-update-20260724'
+          run_id = os.environ['RUN_ID']
+          token = os.environ['GH_TOKEN']
+          files = {
+              'audit.json': 'Chronological_Lineup_Impact/audit.json',
+              'methodology.txt': 'Chronological_Lineup_Impact/methodology.txt',
+              'top20.csv': '/tmp/top20.csv',
+              'model.log': 'model_debug/model.log',
+          }
+          for name, local_path in files.items():
+              content = open(local_path, 'rb').read()
+              payload = json.dumps({
+                  'message': f'Publish chronological impact {name} for run {run_id}',
+                  'content': base64.b64encode(content).decode('ascii'),
+                  'branch': branch,
+              }).encode('utf-8')
+              url = f'https://api.github.com/repos/{repo}/contents/impact_runs/{run_id}/{name}'
+              request = urllib.request.Request(url, data=payload, method='PUT', headers={
+                  'Authorization': f'Bearer {token}',
+                  'Accept': 'application/vnd.github+json',
+                  'X-GitHub-Api-Version': '2022-11-28',
+                  'Content-Type': 'application/json',
+              })
+              with urllib.request.urlopen(request, timeout=60) as response:
+                  print(name, response.status)
+          PY
