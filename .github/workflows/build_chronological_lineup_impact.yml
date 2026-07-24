@@ -1,0 +1,41 @@
+name: Build chronological lineup impact
+on:
+  push:
+    branches: [chatgpt-wnba-data-update-20260724]
+    paths:
+      - 'tools/build_chronological_lineup_impact.py'
+      - '.github/workflows/build_chronological_lineup_impact.yml'
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: chatgpt-wnba-data-update-20260724
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --quiet numpy
+      - name: Build strict chronological lineup impact
+        run: python tools/build_chronological_lineup_impact.py --output-dir Chronological_Lineup_Impact
+      - name: Package outputs
+        run: zip -r WNBA_2026_Chronological_Lineup_Impact_CSVs.zip Chronological_Lineup_Impact
+      - uses: actions/upload-artifact@v4
+        with:
+          name: WNBA-2026-chronological-lineup-impact
+          path: WNBA_2026_Chronological_Lineup_Impact_CSVs.zip
+          retention-days: 7
+      - name: Record model run
+        run: |
+          mkdir -p impact_status
+          printf '%s\n' '${{ github.run_id }}' > impact_status/run_id.txt
+          cp Chronological_Lineup_Impact/audit.json impact_status/audit.json
+          cp Chronological_Lineup_Impact/methodology.txt impact_status/methodology.txt
+          head -n 21 Chronological_Lineup_Impact/player_game_impact.csv > impact_status/top20.csv
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add impact_status
+          git commit -m 'Record chronological lineup impact model [skip ci]'
+          git push origin HEAD:chatgpt-wnba-data-update-20260724
