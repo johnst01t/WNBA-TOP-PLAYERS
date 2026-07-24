@@ -1,0 +1,45 @@
+{
+  "processed_csv_game_ids": 201,
+  "raw_games_available": 201,
+  "unavailable_game_ids": [],
+  "first_date": "2026-05-08",
+  "last_date": "2026-07-23",
+  "players": 227,
+  "stints": 6459,
+  "player_games": 3992,
+  "games_through_2026_07_09": 161,
+  "stints_through_2026_07_09": 5237,
+  "target_old_games": 165,
+  "target_old_stints": 5308,
+  "score_reconciled_games": 143,
+  "games_with_substitution_errors": 1,
+  "total_substitution_errors": 1,
+  "period_team_units": 1630,
+  "period_team_units_with_exact_five_direct_clues": 1628,
+  "period_team_units_with_zero_solver_penalty": 1605,
+  "final_baseline_per_40": 82.695564131648,
+  "final_home_court_per_40": 0.8733165712978808,
+  "method": "Actual lineup scoring minus the exact ten-player lineup expectation frozen before each game. No composite weights, box-score production, game-result bonus, clutch bonus, Elo blend or 0-100 transformation.",
+  "limitation": "All players sharing a stint share that stint's residual. Individual separation comes from different substitution patterns and the chronological regularized model; one fully shared stint cannot prove isolated causality."
+}
+TOP 20 RAW NET ADJUSTED POINT GAMES
+1 2026-07-13 Tyasha Harris IND LV 38.246 67.943 22.52
+2 2026-07-11 Jewell Loyd LV PHX 36.695 51.988 28.23
+3 2026-07-13 Sophie Cunningham IND LV 36.19 62.218 23.27
+4 2026-06-25 Marina Mabrey TOR LA 36.118 45.124 32.02
+5 2026-05-11 Laeticia Amihere GS PHX 35.966 59.014 24.38
+6 2026-07-11 Chelsea Gray LV PHX 35.862 51.743 27.72
+7 2026-05-09 Natasha Mack PHX LV 34.338 54.333 25.28
+8 2026-06-07 Erica Wheeler LA POR 33.945 51.109 26.57
+9 2026-06-28 Jade Melbourne SEA ATL 32.679 42.765 30.57
+10 2026-07-11 Bridget Carleton POR ATL 32.415 38.191 33.95
+11 2026-06-26 Sydney Taylor CHI POR 31.404 54.013 23.26
+12 2026-06-22 Kennedy Burke CON CHI 31.376 52.844 23.75
+13 2026-05-11 Janelle Salaun GS PHX 31.318 48.121 26.03
+14 2026-05-09 DeWanna Bonner PHX LV 31.291 57.59 21.73
+15 2026-05-08 Julie Vanloo NY CON 31.0 56.304 22.02
+16 2026-06-28 Monique Billings IND LA 30.97 56.481 21.93
+17 2026-05-14 A'ja Wilson LV CON 30.864 59.785 20.65
+18 2026-05-09 Kahleah Copper PHX LV 30.376 43.194 28.13
+19 2026-06-25 Julie Allemand TOR LA 30.299 40.5 29.93
+20 2026-05-10 Jackie Young LV LA 30.07 38.905 30.92
