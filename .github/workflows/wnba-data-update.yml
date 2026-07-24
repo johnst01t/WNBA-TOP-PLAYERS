@@ -23,7 +23,7 @@ jobs:
       - name: Download missing 2026 WNBA games
         run: python tools/download_wnba_new_games.py --start-id 401857054 --end-id 401857091 --output-dir WNBA_2026_New_Games
       - name: Build strict chronological lineup impact
-        run: python tools/build_chronological_lineup_impact.py --output-dir Chronological_Lineup_Impact
+        run: python tools/build_chronological_lineup_impact_v2.py --output-dir Chronological_Lineup_Impact
       - name: Archive outputs
         run: |
           zip -r WNBA_2026_New_Games_Through_401857091.zip WNBA_2026_New_Games
