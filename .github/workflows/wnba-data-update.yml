@@ -1,0 +1,38 @@
+name: WNBA Data Update
+on:
+  push:
+    branches:
+      - chatgpt-wnba-data-update-20260724
+    paths-ignore:
+      - update_status/**
+permissions:
+  contents: write
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: chatgpt-wnba-data-update-20260724
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download missing 2026 WNBA games
+        run: python tools/download_wnba_new_games.py --start-id 401857054 --end-id 401857091 --output-dir WNBA_2026_New_Games
+      - name: Archive raw update
+        run: zip -r WNBA_2026_New_Games_Through_401857091.zip WNBA_2026_New_Games
+      - uses: actions/upload-artifact@v4
+        with:
+          name: WNBA-2026-new-games-through-401857091
+          path: WNBA_2026_New_Games_Through_401857091.zip
+          retention-days: 7
+      - name: Record run ID
+        run: |
+          mkdir -p update_status
+          printf '%s\n' '${{ github.run_id }}' > update_status/run_id.txt
+          cp WNBA_2026_New_Games/audit.json update_status/audit.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add update_status/run_id.txt update_status/audit.json
+          git commit -m 'Record WNBA data update run [skip ci]'
+          git push origin HEAD:chatgpt-wnba-data-update-20260724
