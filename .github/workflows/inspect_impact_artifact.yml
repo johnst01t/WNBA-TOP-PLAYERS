@@ -18,12 +18,12 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh run download 30063719664 -n WNBA-2026-chronological-lineup-impact -D downloaded
-      - name: Extract and summarize audit mismatches
+      - name: Extract audit and discover official schedule IDs
         run: |
           mkdir -p extracted artifact_inspect
           unzip -q downloaded/WNBA_2026_Chronological_Lineup_Impact_CSVs.zip -d extracted
           python - <<'PY'
-          import csv, json
+          import csv, json, datetime as dt, urllib.request
           from pathlib import Path
           path = next(Path('extracted').rglob('game_reconstruction_audit.csv'))
           rows = list(csv.DictReader(path.open(encoding='utf-8-sig')))
@@ -35,8 +35,35 @@ jobs:
           fields=list(rows[0])
           with (out/'mismatches.csv').open('w',newline='',encoding='utf-8-sig') as f:
               w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(mismatches)
-          summary={'rows':len(rows),'mismatches':len(mismatches),'first_mismatches':mismatches[:20]}
+          schedule=[]
+          start=dt.date(2026,5,1); end=dt.date(2026,7,24); day=start
+          seen=set()
+          while day<=end:
+              url='https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates='+day.strftime('%Y%m%d')+'&limit=100'
+              req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0'})
+              try:
+                  with urllib.request.urlopen(req,timeout=30) as response: data=json.load(response)
+              except Exception:
+                  day+=dt.timedelta(days=1); continue
+              for event in data.get('events',[]):
+                  gid=str(event.get('id') or '')
+                  if not gid or gid in seen: continue
+                  season=event.get('season') or {}
+                  competition=(event.get('competitions') or [{}])[0]
+                  status=((competition.get('status') or {}).get('type') or {})
+                  if int(season.get('type') or 0)!=2 or not status.get('completed'): continue
+                  competitors=competition.get('competitors') or []
+                  home=next((c for c in competitors if c.get('homeAway')=='home'),{})
+                  away=next((c for c in competitors if c.get('homeAway')=='away'),{})
+                  schedule.append({'game_id':gid,'date':str(event.get('date') or '')[:10],'away':((away.get('team') or {}).get('abbreviation')),'home':((home.get('team') or {}).get('abbreviation')),'away_score':away.get('score'),'home_score':home.get('score')})
+                  seen.add(gid)
+              day+=dt.timedelta(days=1)
+          schedule.sort(key=lambda r:(r['date'],int(r['game_id'])))
+          reconstructed_ids={r['Game ID'] for r in rows}
+          schedule_ids={r['game_id'] for r in schedule}
+          summary={'rows':len(rows),'mismatches':len(mismatches),'official_completed_games':len(schedule),'missing_from_reconstruction':sorted(schedule_ids-reconstructed_ids),'extra_in_reconstruction':sorted(reconstructed_ids-schedule_ids),'first_mismatches':mismatches[:20]}
           (out/'summary.json').write_text(json.dumps(summary,indent=2),encoding='utf-8')
+          (out/'official_schedule.json').write_text(json.dumps(schedule,indent=2),encoding='utf-8')
           print(json.dumps(summary,indent=2))
           PY
       - name: Publish inspection by API
@@ -60,7 +87,7 @@ jobs:
               if sha: payload['sha']=sha
               req=urllib.request.Request(url,data=json.dumps(payload).encode(),method='PUT',headers=headers)
               with urllib.request.urlopen(req) as response: print(path,response.status)
-          for name in ['summary.json','mismatches.csv']:
+          for name in ['summary.json','mismatches.csv','official_schedule.json']:
               content=open('artifact_inspect/'+name,'rb').read()
               put(f'artifact_inspections/{run}/{name}',content,f'Publish artifact inspection {run} {name}')
               put(f'artifact_inspections/latest_{name}',content,f'Update latest artifact inspection {name}')
