@@ -1,6 +1,12 @@
 {
   "rows": 201,
   "mismatches": 58,
+  "official_completed_games": 203,
+  "missing_from_reconstruction": [
+    "401857321",
+    "401892393"
+  ],
+  "extra_in_reconstruction": [],
   "first_mismatches": [
     {
       "Game ID": "401856897",
