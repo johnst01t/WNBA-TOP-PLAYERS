@@ -1,0 +1,10 @@
+STRICT CLEAN-ONLY CHRONOLOGICAL LINEUP IMPACT
+Offensive Adjusted Points = actual timestamped team points while the player was on court minus expected team points for the exact ten-player lineup before the game.
+Defensive Adjusted Points = expected opponent points for the exact ten-player lineup minus actual timestamped opponent points.
+Net Adjusted Points = Offensive Adjusted Points + Defensive Adjusted Points.
+Every expectation is frozen before the game and learned only from earlier clean games.
+Games with any ambiguous period lineup, non-zero solver penalty or substitution inconsistency are excluded from both training and ranking.
+No box-score production, win bonus, margin bonus, clutch bonus, Elo component, composite weighting or 0-100 rescaling is used.
+Only timestamped scoring events are assigned to lineups. Un-timestamped later scoreboard corrections are audited and left unassigned.
+Net Adjusted Points is the primary total game-impact measure. Net Adjusted Points / 40 is a separate rate measure for 10+ minute samples.
+Causality limit: all players sharing a stint share its residual; one shared stint cannot isolate which teammate caused the outcome.
