@@ -1,0 +1,1626 @@
+[
+  {
+    "game_id": "401856890",
+    "date": "2026-05-08",
+    "away": "CON",
+    "home": "NY",
+    "away_score": "75",
+    "home_score": "106"
+  },
+  {
+    "game_id": "401856891",
+    "date": "2026-05-08",
+    "away": "WSH",
+    "home": "TOR",
+    "away_score": "68",
+    "home_score": "65"
+  },
+  {
+    "game_id": "401856892",
+    "date": "2026-05-09",
+    "away": "GS",
+    "home": "SEA",
+    "away_score": "91",
+    "home_score": "80"
+  },
+  {
+    "game_id": "401856893",
+    "date": "2026-05-09",
+    "away": "DAL",
+    "home": "IND",
+    "away_score": "107",
+    "home_score": "104"
+  },
+  {
+    "game_id": "401856894",
+    "date": "2026-05-09",
+    "away": "PHX",
+    "home": "LV",
+    "away_score": "99",
+    "home_score": "66"
+  },
+  {
+    "game_id": "401856895",
+    "date": "2026-05-10",
+    "away": "CHI",
+    "home": "POR",
+    "away_score": "98",
+    "home_score": "83"
+  },
+  {
+    "game_id": "401856896",
+    "date": "2026-05-10",
+    "away": "SEA",
+    "home": "CON",
+    "away_score": "89",
+    "home_score": "82"
+  },
+  {
+    "game_id": "401856897",
+    "date": "2026-05-10",
+    "away": "NY",
+    "home": "WSH",
+    "away_score": "98",
+    "home_score": "93"
+  },
+  {
+    "game_id": "401856898",
+    "date": "2026-05-10",
+    "away": "LV",
+    "home": "LA",
+    "away_score": "105",
+    "home_score": "78"
+  },
+  {
+    "game_id": "401856899",
+    "date": "2026-05-10",
+    "away": "ATL",
+    "home": "MIN",
+    "away_score": "91",
+    "home_score": "90"
+  },
+  {
+    "game_id": "401856900",
+    "date": "2026-05-11",
+    "away": "PHX",
+    "home": "GS",
+    "away_score": "79",
+    "home_score": "95"
+  },
+  {
+    "game_id": "401856901",
+    "date": "2026-05-13",
+    "away": "ATL",
+    "home": "DAL",
+    "away_score": "77",
+    "home_score": "72"
+  },
+  {
+    "game_id": "401856902",
+    "date": "2026-05-13",
+    "away": "MIN",
+    "home": "PHX",
+    "away_score": "88",
+    "home_score": "84"
+  },
+  {
+    "game_id": "401856903",
+    "date": "2026-05-13",
+    "away": "NY",
+    "home": "POR",
+    "away_score": "96",
+    "home_score": "98"
+  },
+  {
+    "game_id": "401856904",
+    "date": "2026-05-13",
+    "away": "SEA",
+    "home": "TOR",
+    "away_score": "73",
+    "home_score": "86"
+  },
+  {
+    "game_id": "401856905",
+    "date": "2026-05-14",
+    "away": "LV",
+    "home": "CON",
+    "away_score": "98",
+    "home_score": "69"
+  },
+  {
+    "game_id": "401856906",
+    "date": "2026-05-14",
+    "away": "CHI",
+    "home": "GS",
+    "away_score": "69",
+    "home_score": "63"
+  },
+  {
+    "game_id": "401856907",
+    "date": "2026-05-14",
+    "away": "IND",
+    "home": "LA",
+    "away_score": "87",
+    "home_score": "78"
+  },
+  {
+    "game_id": "401856908",
+    "date": "2026-05-15",
+    "away": "MIN",
+    "home": "DAL",
+    "away_score": "90",
+    "home_score": "86"
+  },
+  {
+    "game_id": "401856909",
+    "date": "2026-05-15",
+    "away": "NY",
+    "home": "POR",
+    "away_score": "100",
+    "home_score": "82"
+  },
+  {
+    "game_id": "401856910",
+    "date": "2026-05-15",
+    "away": "LV",
+    "home": "CON",
+    "away_score": "101",
+    "home_score": "94"
+  },
+  {
+    "game_id": "401856911",
+    "date": "2026-05-15",
+    "away": "WSH",
+    "home": "IND",
+    "away_score": "104",
+    "home_score": "102"
+  },
+  {
+    "game_id": "401856912",
+    "date": "2026-05-16",
+    "away": "TOR",
+    "home": "LA",
+    "away_score": "95",
+    "home_score": "99"
+  },
+  {
+    "game_id": "401856913",
+    "date": "2026-05-16",
+    "away": "CHI",
+    "home": "PHX",
+    "away_score": "83",
+    "home_score": "91"
+  },
+  {
+    "game_id": "401856914",
+    "date": "2026-05-17",
+    "away": "CHI",
+    "home": "MIN",
+    "away_score": "86",
+    "home_score": "79"
+  },
+  {
+    "game_id": "401856915",
+    "date": "2026-05-17",
+    "away": "LV",
+    "home": "ATL",
+    "away_score": "85",
+    "home_score": "84"
+  },
+  {
+    "game_id": "401856916",
+    "date": "2026-05-17",
+    "away": "SEA",
+    "home": "IND",
+    "away_score": "78",
+    "home_score": "89"
+  },
+  {
+    "game_id": "401856917",
+    "date": "2026-05-17",
+    "away": "TOR",
+    "home": "LA",
+    "away_score": "106",
+    "home_score": "96"
+  },
+  {
+    "game_id": "401856918",
+    "date": "2026-05-19",
+    "away": "WSH",
+    "home": "DAL",
+    "away_score": "69",
+    "home_score": "92"
+  },
+  {
+    "game_id": "401856919",
+    "date": "2026-05-19",
+    "away": "CON",
+    "home": "POR",
+    "away_score": "82",
+    "home_score": "83"
+  },
+  {
+    "game_id": "401856920",
+    "date": "2026-05-20",
+    "away": "TOR",
+    "home": "PHX",
+    "away_score": "98",
+    "home_score": "90"
+  },
+  {
+    "game_id": "401856921",
+    "date": "2026-05-20",
+    "away": "POR",
+    "home": "IND",
+    "away_score": "73",
+    "home_score": "90"
+  },
+  {
+    "game_id": "401856922",
+    "date": "2026-05-21",
+    "away": "DAL",
+    "home": "CHI",
+    "away_score": "99",
+    "home_score": "89"
+  },
+  {
+    "game_id": "401856923",
+    "date": "2026-05-21",
+    "away": "CON",
+    "home": "SEA",
+    "away_score": "80",
+    "home_score": "78"
+  },
+  {
+    "game_id": "401856924",
+    "date": "2026-05-22",
+    "away": "GS",
+    "home": "NY",
+    "away_score": "87",
+    "home_score": "70"
+  },
+  {
+    "game_id": "401856925",
+    "date": "2026-05-22",
+    "away": "TOR",
+    "home": "MIN",
+    "away_score": "72",
+    "home_score": "100"
+  },
+  {
+    "game_id": "401856926",
+    "date": "2026-05-22",
+    "away": "LA",
+    "home": "PHX",
+    "away_score": "97",
+    "home_score": "88"
+  },
+  {
+    "game_id": "401856927",
+    "date": "2026-05-22",
+    "away": "DAL",
+    "home": "ATL",
+    "away_score": "69",
+    "home_score": "86"
+  },
+  {
+    "game_id": "401856928",
+    "date": "2026-05-22",
+    "away": "GS",
+    "home": "IND",
+    "away_score": "82",
+    "home_score": "90"
+  },
+  {
+    "game_id": "401856929",
+    "date": "2026-05-23",
+    "away": "CON",
+    "home": "SEA",
+    "away_score": "59",
+    "home_score": "77"
+  },
+  {
+    "game_id": "401856930",
+    "date": "2026-05-23",
+    "away": "MIN",
+    "home": "CHI",
+    "away_score": "85",
+    "home_score": "75"
+  },
+  {
+    "game_id": "401856931",
+    "date": "2026-05-23",
+    "away": "POR",
+    "home": "TOR",
+    "away_score": "99",
+    "home_score": "80"
+  },
+  {
+    "game_id": "401856932",
+    "date": "2026-05-24",
+    "away": "LA",
+    "home": "LV",
+    "away_score": "101",
+    "home_score": "95"
+  },
+  {
+    "game_id": "401856933",
+    "date": "2026-05-24",
+    "away": "PHX",
+    "home": "ATL",
+    "away_score": "80",
+    "home_score": "82"
+  },
+  {
+    "game_id": "401856934",
+    "date": "2026-05-24",
+    "away": "DAL",
+    "home": "NY",
+    "away_score": "91",
+    "home_score": "76"
+  },
+  {
+    "game_id": "401856935",
+    "date": "2026-05-24",
+    "away": "WSH",
+    "home": "SEA",
+    "away_score": "85",
+    "home_score": "97"
+  },
+  {
+    "game_id": "401856936",
+    "date": "2026-05-26",
+    "away": "POR",
+    "home": "NY",
+    "away_score": "81",
+    "home_score": "74"
+  },
+  {
+    "game_id": "401856937",
+    "date": "2026-05-26",
+    "away": "CON",
+    "home": "GS",
+    "away_score": "70",
+    "home_score": "97"
+  },
+  {
+    "game_id": "401856938",
+    "date": "2026-05-27",
+    "away": "PHX",
+    "home": "NY",
+    "away_score": "74",
+    "home_score": "84"
+  },
+  {
+    "game_id": "401856939",
+    "date": "2026-05-28",
+    "away": "TOR",
+    "home": "CHI",
+    "away_score": "111",
+    "home_score": "104"
+  },
+  {
+    "game_id": "401856940",
+    "date": "2026-05-28",
+    "away": "ATL",
+    "home": "MIN",
+    "away_score": "81",
+    "home_score": "96"
+  },
+  {
+    "game_id": "401856941",
+    "date": "2026-05-28",
+    "away": "CON",
+    "home": "POR",
+    "away_score": "61",
+    "home_score": "71"
+  },
+  {
+    "game_id": "401856942",
+    "date": "2026-05-28",
+    "away": "WSH",
+    "home": "SEA",
+    "away_score": "78",
+    "home_score": "64"
+  },
+  {
+    "game_id": "401856943",
+    "date": "2026-05-29",
+    "away": "LV",
+    "home": "DAL",
+    "away_score": "87",
+    "home_score": "95"
+  },
+  {
+    "game_id": "401856944",
+    "date": "2026-05-29",
+    "away": "IND",
+    "home": "GS",
+    "away_score": "88",
+    "home_score": "90"
+  },
+  {
+    "game_id": "401856945",
+    "date": "2026-05-29",
+    "away": "PHX",
+    "home": "NY",
+    "away_score": "68",
+    "home_score": "75"
+  },
+  {
+    "game_id": "401856946",
+    "date": "2026-05-29",
+    "away": "LA",
+    "home": "WSH",
+    "away_score": "92",
+    "home_score": "87"
+  },
+  {
+    "game_id": "401856947",
+    "date": "2026-05-29",
+    "away": "MIN",
+    "home": "CHI",
+    "away_score": "79",
+    "home_score": "58"
+  },
+  {
+    "game_id": "401856948",
+    "date": "2026-05-30",
+    "away": "ATL",
+    "home": "POR",
+    "away_score": "86",
+    "home_score": "66"
+  },
+  {
+    "game_id": "401856949",
+    "date": "2026-05-30",
+    "away": "SEA",
+    "home": "TOR",
+    "away_score": "72",
+    "home_score": "93"
+  },
+  {
+    "game_id": "401856950",
+    "date": "2026-05-30",
+    "away": "LA",
+    "home": "CON",
+    "away_score": "81",
+    "home_score": "84"
+  },
+  {
+    "game_id": "401856951",
+    "date": "2026-05-31",
+    "away": "IND",
+    "home": "POR",
+    "away_score": "84",
+    "home_score": "100"
+  },
+  {
+    "game_id": "401856952",
+    "date": "2026-05-31",
+    "away": "LV",
+    "home": "GS",
+    "away_score": "91",
+    "home_score": "81"
+  },
+  {
+    "game_id": "401856953",
+    "date": "2026-06-02",
+    "away": "SEA",
+    "home": "DAL",
+    "away_score": "56",
+    "home_score": "79"
+  },
+  {
+    "game_id": "401856954",
+    "date": "2026-06-02",
+    "away": "MIN",
+    "home": "PHX",
+    "away_score": "111",
+    "home_score": "77"
+  },
+  {
+    "game_id": "401856955",
+    "date": "2026-06-02",
+    "away": "CON",
+    "home": "ATL",
+    "away_score": "75",
+    "home_score": "91"
+  },
+  {
+    "game_id": "401856956",
+    "date": "2026-06-02",
+    "away": "CHI",
+    "home": "WSH",
+    "away_score": "72",
+    "home_score": "90"
+  },
+  {
+    "game_id": "401856957",
+    "date": "2026-06-03",
+    "away": "POR",
+    "home": "GS",
+    "away_score": "77",
+    "home_score": "95"
+  },
+  {
+    "game_id": "401856958",
+    "date": "2026-06-03",
+    "away": "LV",
+    "home": "LA",
+    "away_score": "79",
+    "home_score": "69"
+  },
+  {
+    "game_id": "401856959",
+    "date": "2026-06-03",
+    "away": "TOR",
+    "home": "NY",
+    "away_score": "82",
+    "home_score": "97"
+  },
+  {
+    "game_id": "401856960",
+    "date": "2026-06-04",
+    "away": "PHX",
+    "home": "SEA",
+    "away_score": "72",
+    "home_score": "68"
+  },
+  {
+    "game_id": "401856961",
+    "date": "2026-06-04",
+    "away": "ATL",
+    "home": "IND",
+    "away_score": "71",
+    "home_score": "83"
+  },
+  {
+    "game_id": "401856962",
+    "date": "2026-06-05",
+    "away": "GS",
+    "home": "MIN",
+    "away_score": "84",
+    "home_score": "87"
+  },
+  {
+    "game_id": "401856963",
+    "date": "2026-06-05",
+    "away": "CON",
+    "home": "CHI",
+    "away_score": "80",
+    "home_score": "85"
+  },
+  {
+    "game_id": "401856964",
+    "date": "2026-06-06",
+    "away": "DAL",
+    "home": "LA",
+    "away_score": "104",
+    "home_score": "96"
+  },
+  {
+    "game_id": "401856965",
+    "date": "2026-06-06",
+    "away": "PHX",
+    "home": "POR",
+    "away_score": "78",
+    "home_score": "72"
+  },
+  {
+    "game_id": "401856966",
+    "date": "2026-06-06",
+    "away": "SEA",
+    "home": "MIN",
+    "away_score": "68",
+    "home_score": "88"
+  },
+  {
+    "game_id": "401856967",
+    "date": "2026-06-06",
+    "away": "GS",
+    "home": "LV",
+    "away_score": "79",
+    "home_score": "84"
+  },
+  {
+    "game_id": "401856968",
+    "date": "2026-06-06",
+    "away": "WSH",
+    "home": "ATL",
+    "away_score": "77",
+    "home_score": "109"
+  },
+  {
+    "game_id": "401856969",
+    "date": "2026-06-07",
+    "away": "IND",
+    "home": "NY",
+    "away_score": "75",
+    "home_score": "83"
+  },
+  {
+    "game_id": "401856970",
+    "date": "2026-06-07",
+    "away": "CHI",
+    "home": "TOR",
+    "away_score": "68",
+    "home_score": "85"
+  },
+  {
+    "game_id": "401856971",
+    "date": "2026-06-07",
+    "away": "POR",
+    "home": "LA",
+    "away_score": "72",
+    "home_score": "89"
+  },
+  {
+    "game_id": "401856972",
+    "date": "2026-06-08",
+    "away": "NY",
+    "home": "CON",
+    "away_score": "89",
+    "home_score": "80"
+  },
+  {
+    "game_id": "401856973",
+    "date": "2026-06-08",
+    "away": "IND",
+    "home": "WSH",
+    "away_score": "78",
+    "home_score": "76"
+  },
+  {
+    "game_id": "401856974",
+    "date": "2026-06-09",
+    "away": "SEA",
+    "home": "LV",
+    "away_score": "91",
+    "home_score": "101"
+  },
+  {
+    "game_id": "401856975",
+    "date": "2026-06-09",
+    "away": "ATL",
+    "home": "CHI",
+    "away_score": "82",
+    "home_score": "75"
+  },
+  {
+    "game_id": "401856976",
+    "date": "2026-06-10",
+    "away": "DAL",
+    "home": "MIN",
+    "away_score": "76",
+    "home_score": "100"
+  },
+  {
+    "game_id": "401856977",
+    "date": "2026-06-10",
+    "away": "PHX",
+    "home": "GS",
+    "away_score": "81",
+    "home_score": "87"
+  },
+  {
+    "game_id": "401856978",
+    "date": "2026-06-10",
+    "away": "CON",
+    "home": "TOR",
+    "away_score": "102",
+    "home_score": "106"
+  },
+  {
+    "game_id": "401856979",
+    "date": "2026-06-11",
+    "away": "LA",
+    "home": "SEA",
+    "away_score": "88",
+    "home_score": "83"
+  },
+  {
+    "game_id": "401856980",
+    "date": "2026-06-11",
+    "away": "CHI",
+    "home": "IND",
+    "away_score": "106",
+    "home_score": "114"
+  },
+  {
+    "game_id": "401856981",
+    "date": "2026-06-11",
+    "away": "NY",
+    "home": "ATL",
+    "away_score": "104",
+    "home_score": "90"
+  },
+  {
+    "game_id": "401856982",
+    "date": "2026-06-12",
+    "away": "PHX",
+    "home": "DAL",
+    "away_score": "70",
+    "home_score": "85"
+  },
+  {
+    "game_id": "401856983",
+    "date": "2026-06-12",
+    "away": "LV",
+    "home": "POR",
+    "away_score": "105",
+    "home_score": "89"
+  },
+  {
+    "game_id": "401856984",
+    "date": "2026-06-12",
+    "away": "TOR",
+    "home": "WSH",
+    "away_score": "85",
+    "home_score": "86"
+  },
+  {
+    "game_id": "401856985",
+    "date": "2026-06-13",
+    "away": "GS",
+    "home": "SEA",
+    "away_score": "76",
+    "home_score": "72"
+  },
+  {
+    "game_id": "401856986",
+    "date": "2026-06-13",
+    "away": "IND",
+    "home": "CON",
+    "away_score": "85",
+    "home_score": "75"
+  },
+  {
+    "game_id": "401856987",
+    "date": "2026-06-14",
+    "away": "MIN",
+    "home": "LV",
+    "away_score": "97",
+    "home_score": "100"
+  },
+  {
+    "game_id": "401856988",
+    "date": "2026-06-14",
+    "away": "DAL",
+    "home": "POR",
+    "away_score": "83",
+    "home_score": "84"
+  },
+  {
+    "game_id": "401856989",
+    "date": "2026-06-14",
+    "away": "LA",
+    "home": "PHX",
+    "away_score": "111",
+    "home_score": "102"
+  },
+  {
+    "game_id": "401856990",
+    "date": "2026-06-14",
+    "away": "WSH",
+    "home": "NY",
+    "away_score": "64",
+    "home_score": "86"
+  },
+  {
+    "game_id": "401856991",
+    "date": "2026-06-14",
+    "away": "ATL",
+    "home": "TOR",
+    "away_score": "102",
+    "home_score": "77"
+  },
+  {
+    "game_id": "401856992",
+    "date": "2026-06-16",
+    "away": "LV",
+    "home": "DAL",
+    "away_score": "66",
+    "home_score": "96"
+  },
+  {
+    "game_id": "401856993",
+    "date": "2026-06-16",
+    "away": "POR",
+    "home": "MIN",
+    "away_score": "74",
+    "home_score": "107"
+  },
+  {
+    "game_id": "401856994",
+    "date": "2026-06-16",
+    "away": "LA",
+    "home": "GS",
+    "away_score": "58",
+    "home_score": "78"
+  },
+  {
+    "game_id": "401856995",
+    "date": "2026-06-16",
+    "away": "TOR",
+    "home": "IND",
+    "away_score": "91",
+    "home_score": "113"
+  },
+  {
+    "game_id": "401856996",
+    "date": "2026-06-17",
+    "away": "WSH",
+    "home": "CON",
+    "away_score": "88",
+    "home_score": "81"
+  },
+  {
+    "game_id": "401856997",
+    "date": "2026-06-18",
+    "away": "NY",
+    "home": "CHI",
+    "away_score": "96",
+    "home_score": "95"
+  },
+  {
+    "game_id": "401856998",
+    "date": "2026-06-18",
+    "away": "DAL",
+    "home": "GS",
+    "away_score": "80",
+    "home_score": "91"
+  },
+  {
+    "game_id": "401856999",
+    "date": "2026-06-18",
+    "away": "MIN",
+    "home": "LA",
+    "away_score": "99",
+    "home_score": "83"
+  },
+  {
+    "game_id": "401857000",
+    "date": "2026-06-18",
+    "away": "LV",
+    "home": "PHX",
+    "away_score": "86",
+    "home_score": "76"
+  },
+  {
+    "game_id": "401857001",
+    "date": "2026-06-18",
+    "away": "SEA",
+    "home": "POR",
+    "away_score": "89",
+    "home_score": "94"
+  },
+  {
+    "game_id": "401857002",
+    "date": "2026-06-18",
+    "away": "ATL",
+    "home": "IND",
+    "away_score": "108",
+    "home_score": "101"
+  },
+  {
+    "game_id": "401857003",
+    "date": "2026-06-19",
+    "away": "TOR",
+    "home": "CON",
+    "away_score": "101",
+    "home_score": "97"
+  },
+  {
+    "game_id": "401857004",
+    "date": "2026-06-19",
+    "away": "WSH",
+    "home": "NY",
+    "away_score": "86",
+    "home_score": "83"
+  },
+  {
+    "game_id": "401857005",
+    "date": "2026-06-20",
+    "away": "MIN",
+    "home": "GS",
+    "away_score": "81",
+    "home_score": "75"
+  },
+  {
+    "game_id": "401857006",
+    "date": "2026-06-20",
+    "away": "IND",
+    "home": "ATL",
+    "away_score": "96",
+    "home_score": "113"
+  },
+  {
+    "game_id": "401857007",
+    "date": "2026-06-20",
+    "away": "SEA",
+    "home": "PHX",
+    "away_score": "73",
+    "home_score": "93"
+  },
+  {
+    "game_id": "401857008",
+    "date": "2026-06-21",
+    "away": "CHI",
+    "home": "DAL",
+    "away_score": "92",
+    "home_score": "93"
+  },
+  {
+    "game_id": "401857009",
+    "date": "2026-06-21",
+    "away": "GS",
+    "home": "LV",
+    "away_score": "73",
+    "home_score": "92"
+  },
+  {
+    "game_id": "401857010",
+    "date": "2026-06-21",
+    "away": "WSH",
+    "home": "MIN",
+    "away_score": "84",
+    "home_score": "79"
+  },
+  {
+    "game_id": "401857011",
+    "date": "2026-06-22",
+    "away": "NY",
+    "home": "LA",
+    "away_score": "97",
+    "home_score": "98"
+  },
+  {
+    "game_id": "401857012",
+    "date": "2026-06-22",
+    "away": "CHI",
+    "home": "CON",
+    "away_score": "63",
+    "home_score": "92"
+  },
+  {
+    "game_id": "401857013",
+    "date": "2026-06-22",
+    "away": "TOR",
+    "home": "ATL",
+    "away_score": "87",
+    "home_score": "94"
+  },
+  {
+    "game_id": "401857014",
+    "date": "2026-06-23",
+    "away": "PHX",
+    "home": "IND",
+    "away_score": "77",
+    "home_score": "86"
+  },
+  {
+    "game_id": "401857015",
+    "date": "2026-06-23",
+    "away": "DAL",
+    "home": "SEA",
+    "away_score": "112",
+    "home_score": "110"
+  },
+  {
+    "game_id": "401857016",
+    "date": "2026-06-24",
+    "away": "NY",
+    "home": "LV",
+    "away_score": "87",
+    "home_score": "76"
+  },
+  {
+    "game_id": "401857017",
+    "date": "2026-06-24",
+    "away": "PHX",
+    "home": "IND",
+    "away_score": "111",
+    "home_score": "109"
+  },
+  {
+    "game_id": "401857018",
+    "date": "2026-06-24",
+    "away": "MIN",
+    "home": "WSH",
+    "away_score": "78",
+    "home_score": "76"
+  },
+  {
+    "game_id": "401857019",
+    "date": "2026-06-25",
+    "away": "POR",
+    "home": "CHI",
+    "away_score": "78",
+    "home_score": "101"
+  },
+  {
+    "game_id": "401857020",
+    "date": "2026-06-25",
+    "away": "ATL",
+    "home": "GS",
+    "away_score": "66",
+    "home_score": "77"
+  },
+  {
+    "game_id": "401857021",
+    "date": "2026-06-25",
+    "away": "LA",
+    "home": "TOR",
+    "away_score": "97",
+    "home_score": "125"
+  },
+  {
+    "game_id": "401857022",
+    "date": "2026-06-26",
+    "away": "DAL",
+    "home": "LV",
+    "away_score": "84",
+    "home_score": "99"
+  },
+  {
+    "game_id": "401857023",
+    "date": "2026-06-26",
+    "away": "NY",
+    "home": "SEA",
+    "away_score": "88",
+    "home_score": "99"
+  },
+  {
+    "game_id": "401857024",
+    "date": "2026-06-26",
+    "away": "WSH",
+    "home": "CON",
+    "away_score": "57",
+    "home_score": "68"
+  },
+  {
+    "game_id": "401857025",
+    "date": "2026-06-26",
+    "away": "POR",
+    "home": "CHI",
+    "away_score": "94",
+    "home_score": "124"
+  },
+  {
+    "game_id": "401857026",
+    "date": "2026-06-27",
+    "away": "ATL",
+    "home": "GS",
+    "away_score": "75",
+    "home_score": "78"
+  },
+  {
+    "game_id": "401857027",
+    "date": "2026-06-27",
+    "away": "PHX",
+    "home": "TOR",
+    "away_score": "89",
+    "home_score": "80"
+  },
+  {
+    "game_id": "401857028",
+    "date": "2026-06-28",
+    "away": "LA",
+    "home": "IND",
+    "away_score": "87",
+    "home_score": "111"
+  },
+  {
+    "game_id": "401857029",
+    "date": "2026-06-28",
+    "away": "ATL",
+    "home": "SEA",
+    "away_score": "90",
+    "home_score": "105"
+  },
+  {
+    "game_id": "401857030",
+    "date": "2026-06-28",
+    "away": "MIN",
+    "home": "DAL",
+    "away_score": "85",
+    "home_score": "77"
+  },
+  {
+    "game_id": "401857031",
+    "date": "2026-06-28",
+    "away": "POR",
+    "home": "WSH",
+    "away_score": "123",
+    "home_score": "124"
+  },
+  {
+    "game_id": "401857032",
+    "date": "2026-06-28",
+    "away": "LV",
+    "home": "CHI",
+    "away_score": "107",
+    "home_score": "99"
+  },
+  {
+    "game_id": "401857033",
+    "date": "2026-06-28",
+    "away": "NY",
+    "home": "GS",
+    "away_score": "67",
+    "home_score": "76"
+  },
+  {
+    "game_id": "401857321",
+    "date": "2026-06-30",
+    "away": "LV",
+    "home": "NY",
+    "away_score": "85",
+    "home_score": "93"
+  },
+  {
+    "game_id": "401857034",
+    "date": "2026-07-02",
+    "away": "ATL",
+    "home": "WSH",
+    "away_score": "76",
+    "home_score": "81"
+  },
+  {
+    "game_id": "401857035",
+    "date": "2026-07-03",
+    "away": "DAL",
+    "home": "CON",
+    "away_score": "86",
+    "home_score": "83"
+  },
+  {
+    "game_id": "401857036",
+    "date": "2026-07-03",
+    "away": "SEA",
+    "home": "PHX",
+    "away_score": "67",
+    "home_score": "90"
+  },
+  {
+    "game_id": "401857037",
+    "date": "2026-07-03",
+    "away": "MIN",
+    "home": "NY",
+    "away_score": "86",
+    "home_score": "99"
+  },
+  {
+    "game_id": "401857038",
+    "date": "2026-07-04",
+    "away": "CHI",
+    "home": "LV",
+    "away_score": "90",
+    "home_score": "98"
+  },
+  {
+    "game_id": "401857039",
+    "date": "2026-07-04",
+    "away": "GS",
+    "home": "ATL",
+    "away_score": "88",
+    "home_score": "83"
+  },
+  {
+    "game_id": "401857040",
+    "date": "2026-07-05",
+    "away": "POR",
+    "home": "SEA",
+    "away_score": "77",
+    "home_score": "72"
+  },
+  {
+    "game_id": "401857041",
+    "date": "2026-07-05",
+    "away": "DAL",
+    "home": "TOR",
+    "away_score": "89",
+    "home_score": "76"
+  },
+  {
+    "game_id": "401857042",
+    "date": "2026-07-05",
+    "away": "IND",
+    "home": "LV",
+    "away_score": "84",
+    "home_score": "68"
+  },
+  {
+    "game_id": "401857043",
+    "date": "2026-07-06",
+    "away": "GS",
+    "home": "WSH",
+    "away_score": "62",
+    "home_score": "49"
+  },
+  {
+    "game_id": "401857044",
+    "date": "2026-07-07",
+    "away": "CON",
+    "home": "MIN",
+    "away_score": "90",
+    "home_score": "89"
+  },
+  {
+    "game_id": "401857045",
+    "date": "2026-07-07",
+    "away": "SEA",
+    "home": "LA",
+    "away_score": "82",
+    "home_score": "64"
+  },
+  {
+    "game_id": "401857046",
+    "date": "2026-07-08",
+    "away": "DAL",
+    "home": "NY",
+    "away_score": "88",
+    "home_score": "77"
+  },
+  {
+    "game_id": "401857047",
+    "date": "2026-07-08",
+    "away": "CHI",
+    "home": "PHX",
+    "away_score": "77",
+    "home_score": "66"
+  },
+  {
+    "game_id": "401857048",
+    "date": "2026-07-08",
+    "away": "GS",
+    "home": "TOR",
+    "away_score": "83",
+    "home_score": "75"
+  },
+  {
+    "game_id": "401857049",
+    "date": "2026-07-08",
+    "away": "MIN",
+    "home": "CON",
+    "away_score": "86",
+    "home_score": "80"
+  },
+  {
+    "game_id": "401857050",
+    "date": "2026-07-09",
+    "away": "IND",
+    "home": "LA",
+    "away_score": "92",
+    "home_score": "106"
+  },
+  {
+    "game_id": "401857051",
+    "date": "2026-07-10",
+    "away": "SEA",
+    "home": "ATL",
+    "away_score": "78",
+    "home_score": "89"
+  },
+  {
+    "game_id": "401857052",
+    "date": "2026-07-10",
+    "away": "IND",
+    "home": "PHX",
+    "away_score": "92",
+    "home_score": "89"
+  },
+  {
+    "game_id": "401857053",
+    "date": "2026-07-10",
+    "away": "LV",
+    "home": "POR",
+    "away_score": "88",
+    "home_score": "80"
+  },
+  {
+    "game_id": "401857054",
+    "date": "2026-07-10",
+    "away": "GS",
+    "home": "CON",
+    "away_score": "79",
+    "home_score": "64"
+  },
+  {
+    "game_id": "401857055",
+    "date": "2026-07-10",
+    "away": "DAL",
+    "home": "TOR",
+    "away_score": "108",
+    "home_score": "95"
+  },
+  {
+    "game_id": "401857056",
+    "date": "2026-07-11",
+    "away": "CHI",
+    "home": "LA",
+    "away_score": "87",
+    "home_score": "102"
+  },
+  {
+    "game_id": "401857057",
+    "date": "2026-07-11",
+    "away": "NY",
+    "home": "MIN",
+    "away_score": "85",
+    "home_score": "90"
+  },
+  {
+    "game_id": "401857058",
+    "date": "2026-07-11",
+    "away": "PHX",
+    "home": "LV",
+    "away_score": "58",
+    "home_score": "106"
+  },
+  {
+    "game_id": "401857059",
+    "date": "2026-07-11",
+    "away": "POR",
+    "home": "ATL",
+    "away_score": "102",
+    "home_score": "92"
+  },
+  {
+    "game_id": "401857060",
+    "date": "2026-07-12",
+    "away": "NY",
+    "home": "TOR",
+    "away_score": "91",
+    "home_score": "93"
+  },
+  {
+    "game_id": "401857061",
+    "date": "2026-07-12",
+    "away": "SEA",
+    "home": "WSH",
+    "away_score": "79",
+    "home_score": "84"
+  },
+  {
+    "game_id": "401857062",
+    "date": "2026-07-12",
+    "away": "CHI",
+    "home": "DAL",
+    "away_score": "91",
+    "home_score": "96"
+  },
+  {
+    "game_id": "401857063",
+    "date": "2026-07-13",
+    "away": "IND",
+    "home": "LV",
+    "away_score": "109",
+    "home_score": "75"
+  },
+  {
+    "game_id": "401857064",
+    "date": "2026-07-13",
+    "away": "LA",
+    "home": "ATL",
+    "away_score": "92",
+    "home_score": "101"
+  },
+  {
+    "game_id": "401857065",
+    "date": "2026-07-14",
+    "away": "PHX",
+    "home": "MIN",
+    "away_score": "100",
+    "home_score": "104"
+  },
+  {
+    "game_id": "401857066",
+    "date": "2026-07-14",
+    "away": "POR",
+    "home": "CON",
+    "away_score": "87",
+    "home_score": "90"
+  },
+  {
+    "game_id": "401857067",
+    "date": "2026-07-14",
+    "away": "WSH",
+    "home": "TOR",
+    "away_score": "79",
+    "home_score": "62"
+  },
+  {
+    "game_id": "401857068",
+    "date": "2026-07-15",
+    "away": "SEA",
+    "home": "CHI",
+    "away_score": "90",
+    "home_score": "95"
+  },
+  {
+    "game_id": "401857069",
+    "date": "2026-07-15",
+    "away": "LA",
+    "home": "MIN",
+    "away_score": "87",
+    "home_score": "96"
+  },
+  {
+    "game_id": "401857070",
+    "date": "2026-07-16",
+    "away": "GS",
+    "home": "IND",
+    "away_score": "88",
+    "home_score": "75"
+  },
+  {
+    "game_id": "401857071",
+    "date": "2026-07-16",
+    "away": "POR",
+    "home": "WSH",
+    "away_score": "75",
+    "home_score": "56"
+  },
+  {
+    "game_id": "401857073",
+    "date": "2026-07-17",
+    "away": "SEA",
+    "home": "IND",
+    "away_score": "107",
+    "home_score": "110"
+  },
+  {
+    "game_id": "401857074",
+    "date": "2026-07-17",
+    "away": "ATL",
+    "home": "TOR",
+    "away_score": "111",
+    "home_score": "92"
+  },
+  {
+    "game_id": "401857075",
+    "date": "2026-07-17",
+    "away": "LA",
+    "home": "CHI",
+    "away_score": "82",
+    "home_score": "96"
+  },
+  {
+    "game_id": "401857076",
+    "date": "2026-07-18",
+    "away": "CON",
+    "home": "PHX",
+    "away_score": "96",
+    "home_score": "83"
+  },
+  {
+    "game_id": "401857077",
+    "date": "2026-07-19",
+    "away": "NY",
+    "home": "IND",
+    "away_score": "88",
+    "home_score": "108"
+  },
+  {
+    "game_id": "401857078",
+    "date": "2026-07-19",
+    "away": "POR",
+    "home": "MIN",
+    "away_score": "93",
+    "home_score": "101"
+  },
+  {
+    "game_id": "401857079",
+    "date": "2026-07-19",
+    "away": "WSH",
+    "home": "GS",
+    "away_score": "69",
+    "home_score": "74"
+  },
+  {
+    "game_id": "401857080",
+    "date": "2026-07-19",
+    "away": "LA",
+    "home": "DAL",
+    "away_score": "82",
+    "home_score": "90"
+  },
+  {
+    "game_id": "401857081",
+    "date": "2026-07-19",
+    "away": "CHI",
+    "home": "ATL",
+    "away_score": "91",
+    "home_score": "93"
+  },
+  {
+    "game_id": "401857082",
+    "date": "2026-07-19",
+    "away": "CON",
+    "home": "PHX",
+    "away_score": "63",
+    "home_score": "72"
+  },
+  {
+    "game_id": "401857083",
+    "date": "2026-07-21",
+    "away": "LV",
+    "home": "TOR",
+    "away_score": "109",
+    "home_score": "83"
+  },
+  {
+    "game_id": "401857084",
+    "date": "2026-07-21",
+    "away": "WSH",
+    "home": "GS",
+    "away_score": "90",
+    "home_score": "82"
+  },
+  {
+    "game_id": "401857085",
+    "date": "2026-07-21",
+    "away": "MIN",
+    "home": "SEA",
+    "away_score": "105",
+    "home_score": "102"
+  },
+  {
+    "game_id": "401892393",
+    "date": "2026-07-21",
+    "away": "NY",
+    "home": "DAL",
+    "away_score": "99",
+    "home_score": "98"
+  },
+  {
+    "game_id": "401857086",
+    "date": "2026-07-22",
+    "away": "PHX",
+    "home": "LA",
+    "away_score": "86",
+    "home_score": "82"
+  },
+  {
+    "game_id": "401857087",
+    "date": "2026-07-22",
+    "away": "MIN",
+    "home": "SEA",
+    "away_score": "86",
+    "home_score": "76"
+  },
+  {
+    "game_id": "401857088",
+    "date": "2026-07-22",
+    "away": "CHI",
+    "home": "NY",
+    "away_score": "94",
+    "home_score": "95"
+  },
+  {
+    "game_id": "401857089",
+    "date": "2026-07-22",
+    "away": "LV",
+    "home": "WSH",
+    "away_score": "99",
+    "home_score": "100"
+  },
+  {
+    "game_id": "401857090",
+    "date": "2026-07-23",
+    "away": "CON",
+    "home": "IND",
+    "away_score": "88",
+    "home_score": "123"
+  },
+  {
+    "game_id": "401857091",
+    "date": "2026-07-23",
+    "away": "DAL",
+    "home": "POR",
+    "away_score": "101",
+    "home_score": "97"
+  }
+]
