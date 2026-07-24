@@ -1,0 +1,45 @@
+{
+  "processed_csv_game_ids": 178,
+  "raw_games_available": 178,
+  "unavailable_game_ids": [],
+  "first_date": "2026-05-08",
+  "last_date": "2026-07-23",
+  "players": 227,
+  "stints": 5696,
+  "player_games": 3539,
+  "games_through_2026_07_09": 141,
+  "stints_through_2026_07_09": 4574,
+  "target_old_games": 165,
+  "target_old_stints": 5308,
+  "score_reconciled_games": 131,
+  "games_with_substitution_errors": 0,
+  "total_substitution_errors": 0,
+  "period_team_units": 1442,
+  "period_team_units_with_exact_five_direct_clues": 1442,
+  "period_team_units_with_zero_solver_penalty": 1442,
+  "final_baseline_per_40": 82.83392676308978,
+  "final_home_court_per_40": 0.7575101827805024,
+  "method": "Actual lineup scoring minus the exact ten-player lineup expectation frozen before each game. No composite weights, box-score production, game-result bonus, clutch bonus, Elo blend or 0-100 transformation.",
+  "limitation": "All players sharing a stint share that stint's residual. Individual separation comes from different substitution patterns and the chronological regularized model; one fully shared stint cannot prove isolated causality."
+}
+TOP 20 RAW NET ADJUSTED POINT GAMES
+1 2026-06-25 Marina Mabrey TOR LA 40.364 50.428 32.02
+2 2026-05-11 Laeticia Amihere GS PHX 34.554 56.696 24.38
+3 2026-05-09 Natasha Mack PHX LV 34.338 54.333 25.28
+4 2026-06-25 Julie Allemand TOR LA 34.304 45.854 29.93
+5 2026-05-14 A'ja Wilson LV CON 34.297 66.434 20.65
+6 2026-07-13 Tyasha Harris IND LV 33.713 59.891 22.52
+7 2026-06-07 Erica Wheeler LA POR 32.752 49.313 26.57
+8 2026-06-28 Jade Melbourne SEA ATL 32.674 42.758 30.57
+9 2026-06-25 Maria Conde TOR LA 32.488 44.992 28.88
+10 2026-06-22 Kennedy Burke CON CHI 32.401 54.569 23.75
+11 2026-07-11 Bridget Carleton POR ATL 32.205 37.944 33.95
+12 2026-06-26 Sydney Taylor CHI POR 32.007 55.049 23.26
+13 2026-06-28 Monique Billings IND LA 31.474 57.4 21.93
+14 2026-07-13 Sophie Cunningham IND LV 31.332 53.867 23.27
+15 2026-05-09 DeWanna Bonner PHX LV 31.291 57.59 21.73
+16 2026-05-08 Julie Vanloo NY CON 31.0 56.304 22.02
+17 2026-05-14 Chelsea Gray LV CON 30.39 46.485 26.15
+18 2026-05-09 Kahleah Copper PHX LV 30.376 43.194 28.13
+19 2026-05-11 Janelle Salaun GS PHX 29.809 45.801 26.03
+20 2026-06-22 Olivia Nelson-Ododa CON CHI 27.857 41.449 26.88
