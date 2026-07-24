@@ -23,12 +23,13 @@ jobs:
           name: wnba-raw-inspection
           path: inspect_output.txt
           retention-days: 3
-      - name: Record inspection run ID
+      - name: Record inspection output
         run: |
           mkdir -p inspect_status
           printf '%s\n' '${{ github.run_id }}' > inspect_status/run_id.txt
+          cp inspect_output.txt inspect_status/inspect_output.txt
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add inspect_status/run_id.txt
-          git commit -m 'Record inspection run [skip ci]'
+          git add inspect_status/run_id.txt inspect_status/inspect_output.txt
+          git commit -m 'Record inspection output [skip ci]'
           git push origin HEAD:chatgpt-wnba-data-update-20260724
