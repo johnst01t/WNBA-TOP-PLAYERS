@@ -6,12 +6,14 @@ on:
       - 'tools/inspect_wnba_raw.py'
       - '.github/workflows/inspect_wnba_raw.yml'
 permissions:
-  contents: read
+  contents: write
 jobs:
   inspect:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: chatgpt-wnba-data-update-20260724
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -21,3 +23,12 @@ jobs:
           name: wnba-raw-inspection
           path: inspect_output.txt
           retention-days: 3
+      - name: Record inspection run ID
+        run: |
+          mkdir -p inspect_status
+          printf '%s\n' '${{ github.run_id }}' > inspect_status/run_id.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add inspect_status/run_id.txt
+          git commit -m 'Record inspection run [skip ci]'
+          git push origin HEAD:chatgpt-wnba-data-update-20260724
