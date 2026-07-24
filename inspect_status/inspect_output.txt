@@ -1,0 +1,112 @@
+GAME 401857054
+top keys=['againstTheSpread', 'article', 'boxscore', 'broadcasts', 'espnWP', 'format', 'gameId', 'gameInfo', 'header', 'leaders', 'odds', 'pickcenter', 'playByPlaySource', 'plays', 'predictor', 'season', 'seasonseries', 'standings', 'teamInfo', 'timeouts', 'videos', 'winprobability']
+TEAM GS
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Kayla Thornton
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Cecilia Zandalasini
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Kiah Stokes
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Kaila Charles
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Veronica Burton
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Laeticia Amihere
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Janelle Salaun
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Nadia Fingall
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Tiffany Hayes
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Kaitlyn Chen
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Juste Jocyte
+TEAM CON
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Aaliyah Edwards
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Diamond Miller
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Olivia Nelson-Ododa
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Charlisse Leger-Walker
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Leila Lacan
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Raegan Beers
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Nell Angloma
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Kennedy Burke
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Hailey Van Lith
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Gianna Kneepkens
+SUB COUNT 48
+{"clock.displayValue": "6:11", "game_play_number": 23, "participants.0.athlete.id": "4432834", "participants.1.athlete.id": "2590093", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 2171.0, "team.id": "129689", "text": "Laeticia Amihere enters the game for Kiah Stokes", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "5:04", "game_play_number": 38, "participants.0.athlete.id": "3922628", "participants.1.athlete.id": "4433635", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 2104.0, "team.id": "18", "text": "Kennedy Burke enters the game for Diamond Miller", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "5:04", "game_play_number": 39, "participants.0.athlete.id": "1054", "participants.1.athlete.id": "2529622", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 2104.0, "team.id": "129689", "text": "Tiffany Hayes enters the game for Kayla Thornton", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "5:04", "game_play_number": 40, "participants.0.athlete.id": "4790264", "participants.1.athlete.id": "4065780", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 2104.0, "team.id": "129689", "text": "Janelle Salaun enters the game for Kaila Charles", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "5:04", "game_play_number": 41, "participants.0.athlete.id": "4899328", "participants.1.athlete.id": "4257500", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 2104.0, "team.id": "129689", "text": "Kaitlyn Chen enters the game for Cecilia Zandalasini", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "1:48", "game_play_number": 64, "participants.0.athlete.id": "5345319", "participants.1.athlete.id": "4398966", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 1908.0, "team.id": "18", "text": "Nell Angloma enters the game for Olivia Nelson-Ododa", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "1:48", "game_play_number": 65, "participants.0.athlete.id": "4433635", "participants.1.athlete.id": "5208981", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 1908.0, "team.id": "18", "text": "Diamond Miller enters the game for Leila Lacan", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "1:24", "game_play_number": 69, "participants.0.athlete.id": "4433412", "participants.1.athlete.id": "4703609", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 1884.0, "team.id": "18", "text": "Hailey Van Lith enters the game for Charlisse Leger-Walker", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "10:00", "game_play_number": 83, "participants.0.athlete.id": "4398966", "participants.1.athlete.id": "4433408", "participants.2.athlete.id": null, "period.number": 2, "start.game_seconds_remaining": 1800.0, "team.id": "18", "text": "Olivia Nelson-Ododa enters the game for Aaliyah Edwards", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "8:48", "game_play_number": 91, "participants.0.athlete.id": "2590093", "participants.1.athlete.id": "4432834", "participants.2.athlete.id": null, "period.number": 2, "start.game_seconds_remaining": 1728.0, "team.id": "129689", "text": "Kiah Stokes enters the game for Laeticia Amihere", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "8:48", "game_play_number": 92, "participants.0.athlete.id": "4257500", "participants.1.athlete.id": "4398935", "participants.2.athlete.id": null, "period.number": 2, "start.game_seconds_remaining": 1728.0, "team.id": "129689", "text": "Cecilia Zandalasini enters the game for Veronica Burton", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "7:22", "game_play_number": 101, "participants.0.athlete.id": "4433408", "participants.1.athlete.id": "4433412", "participants.2.athlete.id": null, "period.number": 2, "start.game_seconds_remaining": 1642.0, "team.id": "18", "text": "Aaliyah Edwards enters the game for Hailey Van Lith", "type.id": "584", "type.text": "Substitution"}
+GAME 401857055
+top keys=['againstTheSpread', 'article', 'boxscore', 'broadcasts', 'espnWP', 'format', 'gameId', 'gameInfo', 'header', 'leaders', 'odds', 'pickcenter', 'playByPlaySource', 'plays', 'predictor', 'season', 'seasonseries', 'standings', 'teamInfo', 'timeouts', 'videos', 'winprobability']
+TEAM DAL
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Jessica Shepard
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Awak Kuier
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Arike Ogunbowale
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Paige Bueckers
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Azzi Fudd
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Alysha Clark
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Alanna Smith
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Maddy Siegrist
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Odyssey Sims
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Aziaha James
+TEAM TOR
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Isabelle Harrison
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Maria Conde
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Laura Juskaite
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Marina Mabrey
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Julie Allemand
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Teonni Key
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Kayla Alexander
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Kia Nurse
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Tima Pouye
+SUB COUNT 41
+{"clock.displayValue": "5:34", "game_play_number": 35, "participants.0.athlete.id": "3913881", "participants.1.athlete.id": "4790266", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 2134.0, "team.id": "3", "text": "Alanna Smith enters the game for Awak Kuier", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "5:19", "game_play_number": 38, "participants.0.athlete.id": "5355509", "participants.1.athlete.id": "3910470", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 2119.0, "team.id": "131935", "text": "Tima Pouye enters the game for Maria Conde", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "4:52", "game_play_number": 45, "participants.0.athlete.id": "4434020", "participants.1.athlete.id": "2566453", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 2092.0, "team.id": "131935", "text": "Teonni Key enters the game for Isabelle Harrison", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "3:38", "game_play_number": 55, "participants.0.athlete.id": "2529047", "participants.1.athlete.id": "3904577", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 2018.0, "team.id": "3", "text": "Odyssey Sims enters the game for Arike Ogunbowale", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "3:18", "game_play_number": 58, "participants.0.athlete.id": "3910470", "participants.1.athlete.id": "4001679", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 1998.0, "team.id": "131935", "text": "Maria Conde enters the game for Julie Allemand", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "1:28", "game_play_number": 71, "participants.0.athlete.id": "2566453", "participants.1.athlete.id": "5345444", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 1888.0, "team.id": "131935", "text": "Isabelle Harrison enters the game for Laura Juskaite", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "1:28", "game_play_number": 72, "participants.0.athlete.id": "4433807", "participants.1.athlete.id": "4433790", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 1888.0, "team.id": "3", "text": "Aziaha James enters the game for Azzi Fudd", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "1:20", "game_play_number": 77, "participants.0.athlete.id": "3142327", "participants.1.athlete.id": "3904576", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 1880.0, "team.id": "131935", "text": "Kia Nurse enters the game for Marina Mabrey", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "1:20", "game_play_number": 78, "participants.0.athlete.id": "4001679", "participants.1.athlete.id": "5355509", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 1880.0, "team.id": "131935", "text": "Julie Allemand enters the game for Tima Pouye", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "10:00", "game_play_number": 89, "participants.0.athlete.id": "5345444", "participants.1.athlete.id": "4434020", "participants.2.athlete.id": null, "period.number": 2, "start.game_seconds_remaining": 1800.0, "team.id": "131935", "text": "Laura Juskaite enters the game for Teonni Key", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "10:00", "game_play_number": 90, "participants.0.athlete.id": "3904577", "participants.1.athlete.id": "4433730", "participants.2.athlete.id": null, "period.number": 2, "start.game_seconds_remaining": 1800.0, "team.id": "3", "text": "Arike Ogunbowale enters the game for Paige Bueckers", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "8:57", "game_play_number": 100, "participants.0.athlete.id": "3904576", "participants.1.athlete.id": "3910470", "participants.2.athlete.id": null, "period.number": 2, "start.game_seconds_remaining": 1737.0, "team.id": "131935", "text": "Marina Mabrey enters the game for Maria Conde", "type.id": "584", "type.text": "Substitution"}
+GAME 401857091
+top keys=['againstTheSpread', 'article', 'boxscore', 'broadcasts', 'espnWP', 'format', 'gameId', 'gameInfo', 'header', 'leaders', 'odds', 'pickcenter', 'playByPlaySource', 'plays', 'predictor', 'season', 'seasonseries', 'standings', 'teamInfo', 'timeouts', 'videos', 'winprobability']
+TEAM DAL
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Jessica Shepard
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Awak Kuier
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Arike Ogunbowale
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Paige Bueckers
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Azzi Fudd
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Maddy Siegrist
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Li Yueru
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Odyssey Sims
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Sug Sutton
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Aziaha James
+TEAM POR
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Bridget Carleton
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Emily Engstler
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Megan DiLeo
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Sarah Ashlee Barker
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": true} Carla Leite
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Frieda Buhner
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Nyadiew Puoch
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Serah Williams
+ATH {"active": true, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Karlie Samuelson
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Holly Winterburn
+ATH {"active": false, "didNotPlay": false, "ejected": false, "reason": "COACH'S DECISION", "starter": false} Teja Oblak
+SUB COUNT 52
+{"clock.displayValue": "6:16", "game_play_number": 34, "participants.0.athlete.id": "5105406", "participants.1.athlete.id": "4398729", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 2176.0, "team.id": "132052", "text": "Frieda Buhner enters the game for Emily Engstler", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "5:51", "game_play_number": 39, "participants.0.athlete.id": "5209202", "participants.1.athlete.id": "4703794", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 2151.0, "team.id": "132052", "text": "Nyadiew Puoch enters the game for Sarah Ashlee Barker", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "4:56", "game_play_number": 44, "participants.0.athlete.id": "5108550", "participants.1.athlete.id": "3934218", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 2096.0, "team.id": "132052", "text": "Serah Williams enters the game for Megan DiLeo", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "4:56", "game_play_number": 45, "participants.0.athlete.id": "4399415", "participants.1.athlete.id": "4790266", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 2096.0, "team.id": "3", "text": "Maddy Siegrist enters the game for Awak Kuier", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "4:15", "game_play_number": 52, "participants.0.athlete.id": "5346554", "participants.1.athlete.id": "5208982", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 2055.0, "team.id": "132052", "text": "Teja Oblak enters the game for Carla Leite", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "4:03", "game_play_number": 54, "participants.0.athlete.id": "2529047", "participants.1.athlete.id": "3904577", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 2043.0, "team.id": "3", "text": "Odyssey Sims enters the game for Arike Ogunbowale", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "2:35", "game_play_number": 67, "participants.0.athlete.id": "3056730", "participants.1.athlete.id": "3906972", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 1955.0, "team.id": "132052", "text": "Karlie Samuelson enters the game for Bridget Carleton", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "2:35", "game_play_number": 68, "participants.0.athlete.id": "4398729", "participants.1.athlete.id": "5105406", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 1955.0, "team.id": "132052", "text": "Emily Engstler enters the game for Frieda Buhner", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "2:35", "game_play_number": 69, "participants.0.athlete.id": "4433807", "participants.1.athlete.id": "3906949", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 1955.0, "team.id": "3", "text": "Aziaha James enters the game for Jessica Shepard", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "2:35", "game_play_number": 70, "participants.0.athlete.id": "4336633", "participants.1.athlete.id": "4433790", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 1955.0, "team.id": "3", "text": "Li Yueru enters the game for Azzi Fudd", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "0:0.1", "game_play_number": 86, "participants.0.athlete.id": "3906972", "participants.1.athlete.id": "5209202", "participants.2.athlete.id": null, "period.number": 1, "start.game_seconds_remaining": 1800.0999755859375, "team.id": "132052", "text": "Bridget Carleton enters the game for Nyadiew Puoch", "type.id": "584", "type.text": "Substitution"}
+{"clock.displayValue": "10:00", "game_play_number": 88, "participants.0.athlete.id": "3934218", "participants.1.athlete.id": "5346554", "participants.2.athlete.id": null, "period.number": 2, "start.game_seconds_remaining": 1800.0, "team.id": "132052", "text": "Megan DiLeo enters the game for Teja Oblak", "type.id": "584", "type.text": "Substitution"}
