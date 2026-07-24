@@ -1,0 +1,533 @@
+{
+  "official_completed_games": 203,
+  "clean_games_used": 178,
+  "games_excluded": 25,
+  "excluded_games": [
+    {
+      "game_id": 401856897,
+      "date": "2026-05-10",
+      "away": "NY",
+      "home": "WSH",
+      "reason": "lineup evidence not fully clean",
+      "substitution_errors": [],
+      "ambiguous_period_teams": [
+        {
+          "period": 2,
+          "team_id": "9",
+          "direct_starters": 5,
+          "solver_penalty": 20
+        }
+      ]
+    },
+    {
+      "game_id": 401856898,
+      "date": "2026-05-10",
+      "away": "LV",
+      "home": "LA",
+      "reason": "lineup evidence not fully clean",
+      "substitution_errors": [
+        {
+          "kind": "malformed substitution",
+          "play": 385
+        }
+      ],
+      "ambiguous_period_teams": [
+        {
+          "period": 4,
+          "team_id": "6",
+          "direct_starters": 5,
+          "solver_penalty": 75
+        }
+      ]
+    },
+    {
+      "game_id": 401856901,
+      "date": "2026-05-13",
+      "away": "ATL",
+      "home": "DAL",
+      "reason": "lineup evidence not fully clean",
+      "substitution_errors": [],
+      "ambiguous_period_teams": [
+        {
+          "period": 3,
+          "team_id": "20",
+          "direct_starters": 5,
+          "solver_penalty": 10
+        }
+      ]
+    },
+    {
+      "game_id": 401856904,
+      "date": "2026-05-13",
+      "away": "SEA",
+      "home": "TOR",
+      "reason": "lineup evidence not fully clean",
+      "substitution_errors": [],
+      "ambiguous_period_teams": [
+        {
+          "period": 1,
+          "team_id": "14",
+          "direct_starters": 5,
+          "solver_penalty": 10
+        }
+      ]
+    },
+    {
+      "game_id": 401856908,
+      "date": "2026-05-15",
+      "away": "MIN",
+      "home": "DAL",
+      "reason": "lineup evidence not fully clean",
+      "substitution_errors": [],
+      "ambiguous_period_teams": [
+        {
+          "period": 4,
+          "team_id": "3",
+          "direct_starters": 5,
+          "solver_penalty": 10
+        }
+      ]
+    },
+    {
+      "game_id": 401856928,
+      "date": "2026-05-22",
+      "away": "GS",
+      "home": "IND",
+      "reason": "lineup evidence not fully clean",
+      "substitution_errors": [],
+      "ambiguous_period_teams": [
+        {
+          "period": 3,
+          "team_id": "129689",
+          "direct_starters": 5,
+          "solver_penalty": 10
+        }
+      ]
+    },
+    {
+      "game_id": 401856940,
+      "date": "2026-05-28",
+      "away": "ATL",
+      "home": "MIN",
+      "reason": "lineup evidence not fully clean",
+      "substitution_errors": [],
+      "ambiguous_period_teams": [
+        {
+          "period": 4,
+          "team_id": "20",
+          "direct_starters": 5,
+          "solver_penalty": 10
+        }
+      ]
+    },
+    {
+      "game_id": 401856950,
+      "date": "2026-05-30",
+      "away": "LA",
+      "home": "CON",
+      "reason": "lineup evidence not fully clean",
+      "substitution_errors": [],
+      "ambiguous_period_teams": [
+        {
+          "period": 2,
+          "team_id": "18",
+          "direct_starters": 5,
+          "solver_penalty": 20
+        }
+      ]
+    },
+    {
+      "game_id": 401856958,
+      "date": "2026-06-03",
+      "away": "LV",
+      "home": "LA",
+      "reason": "lineup evidence not fully clean",
+      "substitution_errors": [],
+      "ambiguous_period_teams": [
+        {
+          "period": 4,
+          "team_id": "17",
+          "direct_starters": 5,
+          "solver_penalty": 10
+        }
+      ]
+    },
+    {
+      "game_id": 401856963,
+      "date": "2026-06-05",
+      "away": "CON",
+      "home": "CHI",
+      "reason": "lineup evidence not fully clean",
+      "substitution_errors": [],
+      "ambiguous_period_teams": [
+        {
+          "period": 2,
+          "team_id": "18",
+          "direct_starters": 6,
+          "solver_penalty": 10
+        }
+      ]
+    },
+    {
+      "game_id": 401856965,
+      "date": "2026-06-06",
+      "away": "PHX",
+      "home": "POR",
+      "reason": "lineup evidence not fully clean",
+      "substitution_errors": [],
+      "ambiguous_period_teams": [
+        {
+          "period": 3,
+          "team_id": "132052",
+          "direct_starters": 5,
+          "solver_penalty": 10
+        }
+      ]
+    },
+    {
+      "game_id": 401856969,
+      "date": "2026-06-07",
+      "away": "IND",
+      "home": "NY",
+      "reason": "lineup evidence not fully clean",
+      "substitution_errors": [],
+      "ambiguous_period_teams": [
+        {
+          "period": 3,
+          "team_id": "5",
+          "direct_starters": 5,
+          "solver_penalty": 10
+        }
+      ]
+    },
+    {
+      "game_id": 401856977,
+      "date": "2026-06-10",
+      "away": "PHX",
+      "home": "GS",
+      "reason": "lineup evidence not fully clean",
+      "substitution_errors": [],
+      "ambiguous_period_teams": [
+        {
+          "period": 2,
+          "team_id": "11",
+          "direct_starters": 5,
+          "solver_penalty": 10
+        },
+        {
+          "period": 4,
+          "team_id": "11",
+          "direct_starters": 5,
+          "solver_penalty": 10
+        }
+      ]
+    },
+    {
+      "game_id": 401856979,
+      "date": "2026-06-11",
+      "away": "LA",
+      "home": "SEA",
+      "reason": "lineup evidence not fully clean",
+      "substitution_errors": [],
+      "ambiguous_period_teams": [
+        {
+          "period": 1,
+          "team_id": "14",
+          "direct_starters": 5,
+          "solver_penalty": 10
+        }
+      ]
+    },
+    {
+      "game_id": 401856980,
+      "date": "2026-06-11",
+      "away": "CHI",
+      "home": "IND",
+      "reason": "lineup evidence not fully clean",
+      "substitution_errors": [],
+      "ambiguous_period_teams": [
+        {
+          "period": 2,
+          "team_id": "5",
+          "direct_starters": 5,
+          "solver_penalty": 10
+        }
+      ]
+    },
+    {
+      "game_id": 401857003,
+      "date": "2026-06-19",
+      "away": "TOR",
+      "home": "CON",
+      "reason": "lineup evidence not fully clean",
+      "substitution_errors": [],
+      "ambiguous_period_teams": [
+        {
+          "period": 1,
+          "team_id": "131935",
+          "direct_starters": 5,
+          "solver_penalty": 10
+        }
+      ]
+    },
+    {
+      "game_id": 401857005,
+      "date": "2026-06-20",
+      "away": "MIN",
+      "home": "GS",
+      "reason": "lineup evidence not fully clean",
+      "substitution_errors": [],
+      "ambiguous_period_teams": [
+        {
+          "period": 2,
+          "team_id": "8",
+          "direct_starters": 5,
+          "solver_penalty": 10
+        }
+      ]
+    },
+    {
+      "game_id": 401857009,
+      "date": "2026-06-21",
+      "away": "GS",
+      "home": "LV",
+      "reason": "lineup evidence not fully clean",
+      "substitution_errors": [],
+      "ambiguous_period_teams": [
+        {
+          "period": 3,
+          "team_id": "129689",
+          "direct_starters": 5,
+          "solver_penalty": 10
+        }
+      ]
+    },
+    {
+      "game_id": 401857038,
+      "date": "2026-07-04",
+      "away": "CHI",
+      "home": "LV",
+      "reason": "lineup evidence not fully clean",
+      "substitution_errors": [],
+      "ambiguous_period_teams": [
+        {
+          "period": 5,
+          "team_id": "17",
+          "direct_starters": 4,
+          "solver_penalty": 0
+        }
+      ]
+    },
+    {
+      "game_id": 401857040,
+      "date": "2026-07-05",
+      "away": "POR",
+      "home": "SEA",
+      "reason": "lineup evidence not fully clean",
+      "substitution_errors": [],
+      "ambiguous_period_teams": [
+        {
+          "period": 4,
+          "team_id": "14",
+          "direct_starters": 5,
+          "solver_penalty": 10
+        }
+      ]
+    },
+    {
+      "game_id": 401857047,
+      "date": "2026-07-08",
+      "away": "CHI",
+      "home": "PHX",
+      "reason": "lineup evidence not fully clean",
+      "substitution_errors": [],
+      "ambiguous_period_teams": [
+        {
+          "period": 3,
+          "team_id": "19",
+          "direct_starters": 5,
+          "solver_penalty": 10
+        }
+      ]
+    },
+    {
+      "game_id": 401857058,
+      "date": "2026-07-11",
+      "away": "PHX",
+      "home": "LV",
+      "reason": "lineup evidence not fully clean",
+      "substitution_errors": [],
+      "ambiguous_period_teams": [
+        {
+          "period": 2,
+          "team_id": "11",
+          "direct_starters": 5,
+          "solver_penalty": 20
+        }
+      ]
+    },
+    {
+      "game_id": 401857060,
+      "date": "2026-07-12",
+      "away": "NY",
+      "home": "TOR",
+      "reason": "lineup evidence not fully clean",
+      "substitution_errors": [],
+      "ambiguous_period_teams": [
+        {
+          "period": 4,
+          "team_id": "9",
+          "direct_starters": 5,
+          "solver_penalty": 20
+        }
+      ]
+    },
+    {
+      "game_id": 401857067,
+      "date": "2026-07-14",
+      "away": "WSH",
+      "home": "TOR",
+      "reason": "lineup evidence not fully clean",
+      "substitution_errors": [],
+      "ambiguous_period_teams": [
+        {
+          "period": 3,
+          "team_id": "131935",
+          "direct_starters": 5,
+          "solver_penalty": 10
+        }
+      ]
+    },
+    {
+      "game_id": 401857081,
+      "date": "2026-07-19",
+      "away": "CHI",
+      "home": "ATL",
+      "reason": "lineup evidence not fully clean",
+      "substitution_errors": [],
+      "ambiguous_period_teams": [
+        {
+          "period": 3,
+          "team_id": "20",
+          "direct_starters": 5,
+          "solver_penalty": 10
+        }
+      ]
+    }
+  ],
+  "first_date": "2026-05-08",
+  "last_date": "2026-07-23",
+  "players": 221,
+  "stints": 5696,
+  "all_games_zero_substitution_errors": true,
+  "all_period_team_units_have_exact_five_direct_clues": true,
+  "official_score_difference_games": 47,
+  "official_score_difference_explanation": "Only points attached to timestamped play-by-play scoring events are attributed to lineups. Later scoreboard corrections without an event timestamp are audited but never guessed into a lineup.",
+  "official_score_difference_examples": [
+    {
+      "game_id": "401856903",
+      "away_difference": 0.0,
+      "home_difference": 1.0
+    },
+    {
+      "game_id": "401856911",
+      "away_difference": 1.0,
+      "home_difference": 0.0
+    },
+    {
+      "game_id": "401856913",
+      "away_difference": 0.0,
+      "home_difference": 2.0
+    },
+    {
+      "game_id": "401856915",
+      "away_difference": 1.0,
+      "home_difference": 0.0
+    },
+    {
+      "game_id": "401856917",
+      "away_difference": 1.0,
+      "home_difference": 0.0
+    },
+    {
+      "game_id": "401856919",
+      "away_difference": 1.0,
+      "home_difference": 1.0
+    },
+    {
+      "game_id": "401856922",
+      "away_difference": 0.0,
+      "home_difference": 2.0
+    },
+    {
+      "game_id": "401856923",
+      "away_difference": 1.0,
+      "home_difference": 0.0
+    },
+    {
+      "game_id": "401856929",
+      "away_difference": 0.0,
+      "home_difference": 1.0
+    },
+    {
+      "game_id": "401856932",
+      "away_difference": 1.0,
+      "home_difference": 0.0
+    },
+    {
+      "game_id": "401856934",
+      "away_difference": 0.0,
+      "home_difference": 1.0
+    },
+    {
+      "game_id": "401856937",
+      "away_difference": 0.0,
+      "home_difference": 2.0
+    },
+    {
+      "game_id": "401856939",
+      "away_difference": 0.0,
+      "home_difference": 1.0
+    },
+    {
+      "game_id": "401856944",
+      "away_difference": 1.0,
+      "home_difference": 0.0
+    },
+    {
+      "game_id": "401856948",
+      "away_difference": 0.0,
+      "home_difference": 1.0
+    },
+    {
+      "game_id": "401856949",
+      "away_difference": 0.0,
+      "home_difference": 1.0
+    },
+    {
+      "game_id": "401856951",
+      "away_difference": 0.0,
+      "home_difference": 1.0
+    },
+    {
+      "game_id": "401856952",
+      "away_difference": 1.0,
+      "home_difference": 0.0
+    },
+    {
+      "game_id": "401856960",
+      "away_difference": 1.0,
+      "home_difference": 0.0
+    },
+    {
+      "game_id": "401856961",
+      "away_difference": 0.0,
+      "home_difference": 2.0
+    }
+  ],
+  "method": "Actual timestamped scoring by the player's exact five-player unit minus the pregame expectation for the exact ten players on court. Expectations use only prior clean games. No box score, result bonus, clutch bonus, Elo blend, composite weights or 0-100 score.",
+  "primary_measure": "Net Adjusted Points",
+  "rate_measure": "Net Adjusted Points / 40, ranked only for games with at least 10 minutes",
+  "causality_limit": "Every teammate sharing a stint shares that stint residual. Different substitution patterns allow separation across stints, but one shared stint cannot prove which individual caused the result.",
+  "player_games": 3539
+}
