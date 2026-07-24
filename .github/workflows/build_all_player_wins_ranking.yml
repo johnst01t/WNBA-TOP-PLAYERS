@@ -1,0 +1,241 @@
+name: Build all-player wins ranking
+
+on:
+  push:
+    branches:
+      - chatgpt-wins-ranking-20260724
+    paths:
+      - data/wins_source_2026.csv
+      - .github/workflows/build_all_player_wins_ranking.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pandas openpyxl
+
+      - name: Build sortable workbook
+        run: |
+          python - <<'PY'
+          import math
+          import pandas as pd
+          from openpyxl import Workbook
+          from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+          from openpyxl.formatting.rule import ColorScaleRule, DataBarRule
+          from openpyxl.worksheet.table import Table, TableStyleInfo
+          from openpyxl.chart import BarChart, Reference
+
+          source = 'data/wins_source_2026.csv'
+          output = 'WNBA_2026_ALL_PLAYERS_RANKED_BY_ESTIMATED_WINS.xlsx'
+          csv_output = 'WNBA_2026_ALL_PLAYERS_RANKED_BY_ESTIMATED_WINS.csv'
+          points_per_win = 30.0
+
+          df = pd.read_csv(source)
+          if len(df) != 213:
+              raise ValueError(f'Expected 213 players, found {len(df)}')
+          if df['Player'].nunique() != 213:
+              raise ValueError('Player names are not unique')
+
+          numeric = ['Games','Minutes','Offence_per_40','Defence_per_40','Net_per_40','Reliability','Net_Adjusted_Points','Estimated_Wins_Source']
+          for col in numeric:
+              df[col] = pd.to_numeric(df[col], errors='raise')
+
+          df['Offensive Adjusted Points'] = df['Offence_per_40'] * df['Minutes'] / 40.0
+          df['Defensive Adjusted Points'] = df['Defence_per_40'] * df['Minutes'] / 40.0
+          df['Estimated Wins'] = df['Net_Adjusted_Points'] / points_per_win
+          max_diff = (df['Estimated Wins'] - df['Estimated_Wins_Source']).abs().max()
+          if max_diff > 1e-8:
+              raise ValueError(f'Wins mismatch: max difference {max_diff}')
+
+          df = df.sort_values(['Estimated Wins','Net_per_40','Minutes'], ascending=[False,False,False]).reset_index(drop=True)
+          df.insert(0, 'Win Rank', range(1, len(df)+1))
+          df['Reliability'] = df['Reliability'] * 100.0
+
+          columns = [
+              'Win Rank','Player','Team','Estimated Wins','Offence_per_40','Defence_per_40','Net_per_40',
+              'Games','Minutes','Offensive Adjusted Points','Defensive Adjusted Points',
+              'Net_Adjusted_Points','Reliability'
+          ]
+          pretty = {
+              'Offence_per_40':'Offensive Impact / 40',
+              'Defence_per_40':'Defensive Impact / 40',
+              'Net_per_40':'Net Impact / 40',
+              'Net_Adjusted_Points':'Net Adjusted Points',
+              'Reliability':'Reliability %'
+          }
+          out_df = df[columns].rename(columns=pretty)
+          out_df.to_csv(csv_output, index=False)
+
+          wb = Workbook()
+          ws = wb.active
+          ws.title = 'ALL PLAYERS BY WINS'
+
+          navy = '14213D'
+          blue = '1F4E78'
+          white = 'FFFFFF'
+          light_blue = 'D9EAF7'
+          light_gray = 'F3F4F6'
+          green = 'C6E0B4'
+          red = 'F8CBAD'
+          yellow = 'FFF2CC'
+          thin = Side(style='thin', color='D1D5DB')
+
+          for c, header in enumerate(out_df.columns, 1):
+              cell = ws.cell(1, c, header)
+              cell.fill = PatternFill('solid', fgColor=blue)
+              cell.font = Font(color=white, bold=True)
+              cell.alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
+              cell.border = Border(bottom=thin)
+
+          for r_idx, row in enumerate(out_df.itertuples(index=False, name=None), 2):
+              for c_idx, value in enumerate(row, 1):
+                  ws.cell(r_idx, c_idx, value)
+              if r_idx % 2 == 0:
+                  for c_idx in range(1, len(out_df.columns)+1):
+                      ws.cell(r_idx, c_idx).fill = PatternFill('solid', fgColor='F8FAFC')
+
+          ws.freeze_panes = 'D2'
+          ws.auto_filter.ref = f'A1:M{len(out_df)+1}'
+          ws.sheet_view.showGridLines = False
+          ws.row_dimensions[1].height = 42
+
+          widths = {
+              'A':10,'B':25,'C':12,'D':15,'E':19,'F':19,'G':16,'H':10,'I':13,
+              'J':24,'K':24,'L':20,'M':15
+          }
+          for col, width in widths.items():
+              ws.column_dimensions[col].width = width
+
+          for cell in ws['A'][1:]: cell.number_format = '0'
+          for cell in ws['D'][1:]: cell.number_format = '0.000'
+          for col in ['E','F','G']:
+              for cell in ws[col][1:]: cell.number_format = '+0.000;-0.000;0.000'
+          for cell in ws['H'][1:]: cell.number_format = '0'
+          for cell in ws['I'][1:]: cell.number_format = '0.0'
+          for col in ['J','K','L']:
+              for cell in ws[col][1:]: cell.number_format = '+0.00;-0.00;0.00'
+          for cell in ws['M'][1:]: cell.number_format = '0.0%'
+
+          # Reliability was converted to percent values; store it as a fraction for Excel percentage display.
+          for row in range(2, len(out_df)+2):
+              ws.cell(row, 13).value = ws.cell(row, 13).value / 100.0
+
+          ws.conditional_formatting.add(f'D2:D{len(out_df)+1}', ColorScaleRule(
+              start_type='min', start_color=red,
+              mid_type='percentile', mid_value=50, mid_color=yellow,
+              end_type='max', end_color=green
+          ))
+          for col in ['E','F','G','J','K','L']:
+              ws.conditional_formatting.add(f'{col}2:{col}{len(out_df)+1}', ColorScaleRule(
+                  start_type='min', start_color=red,
+                  mid_type='num', mid_value=0, mid_color=yellow,
+                  end_type='max', end_color=green
+              ))
+          ws.conditional_formatting.add(f'M2:M{len(out_df)+1}', DataBarRule(start_type='num', start_value=0, end_type='num', end_value=1, color=blue))
+
+          tab = Table(displayName='AllPlayersWinsRanking', ref=f'A1:M{len(out_df)+1}')
+          tab.tableStyleInfo = TableStyleInfo(name='TableStyleMedium2', showFirstColumn=False, showLastColumn=False, showRowStripes=False, showColumnStripes=False)
+          ws.add_table(tab)
+
+          # Notes/assumptions sheet.
+          notes = wb.create_sheet('METHOD AND ASSUMPTIONS')
+          notes['A1'] = 'WNBA 2026 — Estimated Wins Method'
+          notes['A1'].fill = PatternFill('solid', fgColor=navy)
+          notes['A1'].font = Font(color=white, bold=True, size=16)
+          notes.merge_cells('A1:D1')
+          notes['A3'] = 'Measure'
+          notes['B3'] = 'Definition'
+          notes['A3'].fill = notes['B3'].fill = PatternFill('solid', fgColor=blue)
+          notes['A3'].font = notes['B3'].font = Font(color=white, bold=True)
+          notes_data = [
+              ('Offensive Impact / 40', 'Chronological lineup-adjusted offensive effect per 40 minutes.'),
+              ('Defensive Impact / 40', 'Chronological lineup-adjusted defensive effect per 40 minutes; positive is better.'),
+              ('Net Impact / 40', 'Offensive Impact / 40 + Defensive Impact / 40.'),
+              ('Net Adjusted Points', 'Net Impact / 40 × Minutes ÷ 40.'),
+              ('Estimated Wins', f'Net Adjusted Points ÷ {points_per_win:g}. The {points_per_win:g}-points-per-win conversion is an explicit assumption.'),
+              ('Ranking', 'All 213 players sorted from highest to lowest Estimated Wins.'),
+          ]
+          for i, (measure, definition) in enumerate(notes_data, 4):
+              notes.cell(i, 1, measure)
+              notes.cell(i, 2, definition)
+          notes['A12'] = 'Points per win'
+          notes['B12'] = points_per_win
+          notes['A12'].font = Font(bold=True)
+          notes['B12'].number_format = '0.0'
+          notes.column_dimensions['A'].width = 28
+          notes.column_dimensions['B'].width = 95
+          notes.freeze_panes = 'A4'
+          notes.sheet_view.showGridLines = False
+          for row in notes.iter_rows(min_row=3, max_row=12, min_col=1, max_col=2):
+              for cell in row:
+                  cell.alignment = Alignment(vertical='top', wrap_text=True)
+
+          # Top 25 chart sheet.
+          chart_ws = wb.create_sheet('TOP 25')
+          chart_ws['A1'] = 'Top 25 Players by Estimated Wins'
+          chart_ws['A1'].font = Font(size=16, bold=True, color=white)
+          chart_ws['A1'].fill = PatternFill('solid', fgColor=navy)
+          chart_ws.merge_cells('A1:D1')
+          chart_ws.append(['Win Rank','Player','Team','Estimated Wins'])
+          for c in chart_ws[2]:
+              c.fill = PatternFill('solid', fgColor=blue)
+              c.font = Font(color=white, bold=True)
+          top25 = out_df.head(25)[['Win Rank','Player','Team','Estimated Wins']]
+          for row in top25.itertuples(index=False, name=None):
+              chart_ws.append(row)
+          chart_ws.column_dimensions['A'].width = 10
+          chart_ws.column_dimensions['B'].width = 25
+          chart_ws.column_dimensions['C'].width = 12
+          chart_ws.column_dimensions['D'].width = 15
+          for cell in chart_ws['D'][2:]: cell.number_format = '0.000'
+          chart = BarChart()
+          chart.type = 'bar'
+          chart.style = 10
+          chart.title = 'Top 25 Estimated Wins'
+          chart.y_axis.title = 'Player'
+          chart.x_axis.title = 'Estimated Wins'
+          chart.height = 13
+          chart.width = 24
+          data = Reference(chart_ws, min_col=4, min_row=2, max_row=27)
+          cats = Reference(chart_ws, min_col=2, min_row=3, max_row=27)
+          chart.add_data(data, titles_from_data=True)
+          chart.set_categories(cats)
+          chart.legend = None
+          chart_ws.add_chart(chart, 'F2')
+          chart_ws.freeze_panes = 'A3'
+          chart_ws.sheet_view.showGridLines = False
+
+          wb.save(output)
+          print(f'Created {output} with {len(out_df)} players')
+          print(out_df.head(10).to_string(index=False))
+          PY
+
+      - name: Upload workbook artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: WNBA-2026-all-players-ranked-by-estimated-wins
+          path: |
+            WNBA_2026_ALL_PLAYERS_RANKED_BY_ESTIMATED_WINS.xlsx
+            WNBA_2026_ALL_PLAYERS_RANKED_BY_ESTIMATED_WINS.csv
+          retention-days: 7
+
+      - name: Record run ID
+        run: |
+          echo "${{ github.run_id }}" > wins_ranking_run_id.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add wins_ranking_run_id.txt
+          git commit -m "Record wins ranking artifact run [skip ci]" || exit 0
+          git push
