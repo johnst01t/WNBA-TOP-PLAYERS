@@ -1,33 +1,43 @@
-"""Run the validated chronological lineup model using raw-game discovery.
+"""Run the chronological lineup model from the official completed-game schedule.
 
-The processed 2026 season CSV is occasionally unpublished. This wrapper discovers
-all actual 2026 regular-season games directly from the public raw ESPN archive,
-then delegates every calculation to the v2 model.
+Game IDs are not always sequential, so discovery comes from ESPN's dated WNBA
+scoreboard. Each discovered game is then read from SportsDataverse's raw archive.
 """
 from __future__ import annotations
 
+import datetime as dt
 import json
+from urllib.request import Request, urlopen
 
 import build_chronological_lineup_impact_v2 as model
 
 
 def discover_actual_2026_regular_season_games() -> list[int]:
-    game_ids: list[int] = []
-    # Includes the one early game ID outside the 401856890..401857091 span.
-    for game_id in range(401856800, 401857092):
-        raw = model.fetch_bytes(model.RAW_GAME_URL.format(game_id=game_id), attempts=2)
-        if raw is None:
-            continue
+    game_ids: set[int] = set()
+    day = dt.date(2026, 5, 1)
+    end = dt.date(2026, 7, 24)
+    while day <= end:
+        url = (
+            "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard"
+            f"?dates={day:%Y%m%d}&limit=100"
+        )
+        request = Request(url, headers={"User-Agent": "Mozilla/5.0"})
         try:
-            data = json.loads(raw)
-        except json.JSONDecodeError:
+            with urlopen(request, timeout=30) as response:
+                data = json.load(response)
+        except Exception:  # noqa: BLE001
+            day += dt.timedelta(days=1)
             continue
-        plays = data.get("plays") or []
-        if not plays:
-            continue
-        first = plays[0]
-        if int(first.get("season") or 0) == 2026 and int(first.get("seasonType") or 0) == 2:
-            game_ids.append(game_id)
+        for event in data.get("events", []):
+            season = event.get("season") or {}
+            competition = (event.get("competitions") or [{}])[0]
+            status = ((competition.get("status") or {}).get("type") or {})
+            if int(season.get("type") or 0) != 2 or not status.get("completed"):
+                continue
+            raw_id = event.get("id")
+            if raw_id is not None:
+                game_ids.add(int(raw_id))
+        day += dt.timedelta(days=1)
     return sorted(game_ids)
 
 
