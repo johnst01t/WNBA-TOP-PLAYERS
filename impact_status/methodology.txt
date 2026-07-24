@@ -1,0 +1,8 @@
+PLAYER GAME IMPACT DEFINITION
+Offensive adjusted points = actual team points while the player was on court minus the points expected from the exact ten-player lineup before the game.
+Defensive adjusted points = expected opponent points while the player was on court minus actual opponent points.
+Net adjusted points = offensive adjusted points + defensive adjusted points.
+All lineup expectations are frozen before the game and use only earlier games.
+No box-score production, score-margin bonus, win bonus, clutch bonus, Elo component, hand-selected blend weights or 0-100 rescaling is used.
+The only exposure scaling is actual stint duration. Net adjusted points is the primary cumulative game measure; Net adjusted points per 40 is the rate measure.
+Limitation: teammates sharing a stint receive the same stint residual. The method controls for lineup strength chronologically but does not prove isolated causality within one shared stint.

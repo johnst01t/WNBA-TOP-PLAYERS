@@ -1,0 +1,23 @@
+{
+  "games": 201,
+  "first_date": "2026-05-08",
+  "last_date": "2026-07-23",
+  "players": 227,
+  "stints": 6459,
+  "player_games": 3923,
+  "missing_ids": [
+    401857072
+  ],
+  "games_through_2026_07_09": 161,
+  "stints_through_2026_07_09": 5237,
+  "target_old_games": 165,
+  "target_old_stints": 5308,
+  "score_reconciled_games": 144,
+  "games_with_errors": 201,
+  "total_errors": 5092,
+  "total_repairs": 2568,
+  "final_baseline_per_40": 82.91708325384822,
+  "final_home_court_per_40": 0.7836199164993004,
+  "method": "Strict chronological lineup residual model. No box score, result bonus, clutch bonus, opponent Elo blend, composite weights or 0-100 rescaling.",
+  "limitation": "Players sharing the same stint share its lineup residual. Individual separation comes from substitution patterns across stints and the chronological regularized model; a single stint cannot identify one player causally."
+}
