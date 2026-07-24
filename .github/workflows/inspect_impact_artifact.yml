@@ -1,0 +1,63 @@
+name: Inspect chronological impact artifact
+on:
+  push:
+    branches: [chatgpt-wnba-data-update-20260724]
+    paths:
+      - '.github/workflows/inspect_impact_artifact.yml'
+permissions:
+  actions: read
+  contents: write
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: chatgpt-wnba-data-update-20260724
+      - name: Download completed model artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh run download 30063719664 -n WNBA-2026-chronological-lineup-impact -D downloaded
+      - name: Extract and summarize audit mismatches
+        run: |
+          mkdir -p extracted artifact_inspect
+          unzip -q downloaded/WNBA_2026_Chronological_Lineup_Impact_CSVs.zip -d extracted
+          python - <<'PY'
+          import csv, json
+          from pathlib import Path
+          path = next(Path('extracted').rglob('game_reconstruction_audit.csv'))
+          rows = list(csv.DictReader(path.open(encoding='utf-8-sig')))
+          mismatches=[]
+          for r in rows:
+              if abs(float(r['Stint Away Points'])-float(r['Final Away']))>1e-7 or abs(float(r['Stint Home Points'])-float(r['Final Home']))>1e-7 or int(float(r['Substitution Errors']))>0:
+                  mismatches.append(r)
+          out=Path('artifact_inspect')
+          fields=list(rows[0])
+          with (out/'mismatches.csv').open('w',newline='',encoding='utf-8-sig') as f:
+              w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(mismatches)
+          summary={
+              'rows':len(rows),
+              'mismatches':len(mismatches),
+              'first_mismatches':mismatches[:20],
+          }
+          (out/'summary.json').write_text(json.dumps(summary,indent=2),encoding='utf-8')
+          print(json.dumps(summary,indent=2))
+          PY
+      - name: Publish inspection by API
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          python - <<'PY'
+          import base64,json,os,urllib.request
+          repo=os.environ['GITHUB_REPOSITORY']; token=os.environ['GH_TOKEN']; run=os.environ['RUN_ID']; branch='chatgpt-wnba-data-update-20260724'
+          for name in ['summary.json','mismatches.csv']:
+              content=open('artifact_inspect/'+name,'rb').read()
+              payload=json.dumps({'message':f'Publish artifact inspection {run} {name}','content':base64.b64encode(content).decode(),'branch':branch}).encode()
+              url=f'https://api.github.com/repos/{repo}/contents/artifact_inspections/{run}/{name}'
+              req=urllib.request.Request(url,data=payload,method='PUT',headers={'Authorization':f'Bearer {token}','Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','Content-Type':'application/json'})
+              with urllib.request.urlopen(req) as response: print(name,response.status)
+          # Expose this inspection run id.
+          content=(run+'\n').encode()
+          # Unique path only; caller can discover from workflow run if needed.
+          PY
