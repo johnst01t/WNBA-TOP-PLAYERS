@@ -1,0 +1,133 @@
+name: Build team wins ranking
+
+on:
+  push:
+    branches:
+      - chatgpt-wins-ranking-20260724
+    paths:
+      - .github/workflows/build_team_wins_ranking.yml
+      - data/wins_source_2026.csv
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pandas openpyxl
+
+      - name: Build team rankings
+        run: |
+          python - <<'PY'
+          import pandas as pd
+          from openpyxl import Workbook
+          from openpyxl.styles import Font, PatternFill, Alignment
+          from openpyxl.formatting.rule import ColorScaleRule
+          from openpyxl.worksheet.table import Table, TableStyleInfo
+
+          source = 'data/wins_source_2026.csv'
+          csv_out = 'WNBA_2026_TEAMS_RANKED_BY_PLAYER_WIN_EQUIVALENT.csv'
+          xlsx_out = 'WNBA_2026_TEAMS_RANKED_BY_PLAYER_WIN_EQUIVALENT.xlsx'
+          ppw = 30.0
+
+          df = pd.read_csv(source)
+          for col in ['Games','Minutes','Offence_per_40','Defence_per_40','Net_per_40','Reliability','Net_Adjusted_Points','Estimated_Wins_Source']:
+              df[col] = pd.to_numeric(df[col], errors='raise')
+
+          df['Offensive Adjusted Points'] = df['Offence_per_40'] * df['Minutes'] / 40.0
+          df['Defensive Adjusted Points'] = df['Defence_per_40'] * df['Minutes'] / 40.0
+          df['Estimated Wins'] = df['Net_Adjusted_Points'] / ppw
+
+          team = df.groupby('Team', as_index=False).agg(
+              Players=('Player','count'),
+              Total_Player_Minutes=('Minutes','sum'),
+              Offensive_Adjusted_Points=('Offensive Adjusted Points','sum'),
+              Defensive_Adjusted_Points=('Defensive Adjusted Points','sum'),
+              Net_Adjusted_Points=('Net_Adjusted_Points','sum'),
+              Team_Player_Win_Equivalent=('Estimated Wins','sum'),
+              Average_Reliability=('Reliability','mean')
+          )
+          team['Minutes_Weighted_Offence_per_40'] = team['Offensive_Adjusted_Points'] / team['Total_Player_Minutes'] * 40.0
+          team['Minutes_Weighted_Defence_per_40'] = team['Defensive_Adjusted_Points'] / team['Total_Player_Minutes'] * 40.0
+          team['Minutes_Weighted_Net_per_40'] = team['Net_Adjusted_Points'] / team['Total_Player_Minutes'] * 40.0
+          team = team.sort_values(['Team_Player_Win_Equivalent','Minutes_Weighted_Net_per_40'], ascending=[False,False]).reset_index(drop=True)
+          team.insert(0, 'Team Rank', range(1, len(team)+1))
+          team = team[[
+              'Team Rank','Team','Team_Player_Win_Equivalent','Offensive_Adjusted_Points',
+              'Defensive_Adjusted_Points','Net_Adjusted_Points','Minutes_Weighted_Offence_per_40',
+              'Minutes_Weighted_Defence_per_40','Minutes_Weighted_Net_per_40','Players',
+              'Total_Player_Minutes','Average_Reliability'
+          ]]
+          team.to_csv(csv_out, index=False)
+
+          wb = Workbook()
+          ws = wb.active
+          ws.title = 'TEAM RANKING'
+          headers = [
+              'Team Rank','Team','Player Win-Equivalent Sum','Offensive Adjusted Points',
+              'Defensive Adjusted Points','Net Adjusted Points','Weighted Offence / 40',
+              'Weighted Defence / 40','Weighted Net / 40','Players','Total Player Minutes',
+              'Average Reliability'
+          ]
+          ws.append(headers)
+          for row in team.itertuples(index=False, name=None):
+              ws.append(row)
+          for c in ws[1]:
+              c.fill = PatternFill('solid', fgColor='1F4E78')
+              c.font = Font(color='FFFFFF', bold=True)
+              c.alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
+          ws.freeze_panes = 'C2'
+          ws.auto_filter.ref = f'A1:L{len(team)+1}'
+          ws.sheet_view.showGridLines = False
+          widths = {'A':11,'B':12,'C':23,'D':24,'E':24,'F':20,'G':21,'H':21,'I':18,'J':10,'K':20,'L':20}
+          for col,w in widths.items(): ws.column_dimensions[col].width = w
+          for row in range(2, len(team)+2):
+              ws.cell(row,3).number_format = '0.000'
+              for col in range(4,10): ws.cell(row,col).number_format = '+0.00;-0.00;0.00'
+              ws.cell(row,11).number_format = '0.0'
+              ws.cell(row,12).number_format = '0.0%'
+          for col in ['C','D','E','F','G','H','I']:
+              ws.conditional_formatting.add(f'{col}2:{col}{len(team)+1}', ColorScaleRule(
+                  start_type='min', start_color='F8CBAD', mid_type='num', mid_value=0,
+                  mid_color='FFF2CC', end_type='max', end_color='C6E0B4'))
+          tab = Table(displayName='TeamWinsRanking', ref=f'A1:L{len(team)+1}')
+          tab.tableStyleInfo = TableStyleInfo(name='TableStyleMedium2', showRowStripes=True)
+          ws.add_table(tab)
+
+          notes = wb.create_sheet('NOTES')
+          notes['A1'] = 'Team ranking interpretation'
+          notes['A1'].font = Font(bold=True, size=16, color='FFFFFF')
+          notes['A1'].fill = PatternFill('solid', fgColor='14213D')
+          notes.merge_cells('A1:B1')
+          notes.append([])
+          notes.append(['Measure','Meaning'])
+          notes.append(['Player Win-Equivalent Sum','Sum of every player’s estimated wins on the team. This is a roster-impact index, not literal team standings wins, because players sharing a lineup share the same lineup residual.'])
+          notes.append(['Offensive/Defensive Adjusted Points','Sum of player offensive or defensive lineup-adjusted points over their minutes.'])
+          notes.append(['Weighted Offence/Defence/Net per 40','Team totals divided by all player minutes and multiplied by 40.'])
+          notes.append(['Ranking basis','Highest Player Win-Equivalent Sum.'])
+          notes.column_dimensions['A'].width = 34
+          notes.column_dimensions['B'].width = 110
+          for row in notes.iter_rows():
+              for c in row: c.alignment = Alignment(wrap_text=True, vertical='top')
+
+          wb.save(xlsx_out)
+          print(team.to_string(index=False))
+          PY
+
+      - name: Commit team CSV and workbook
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add WNBA_2026_TEAMS_RANKED_BY_PLAYER_WIN_EQUIVALENT.csv WNBA_2026_TEAMS_RANKED_BY_PLAYER_WIN_EQUIVALENT.xlsx
+          git commit -m "Add team player win-equivalent ranking [skip ci]" || exit 0
+          git push
