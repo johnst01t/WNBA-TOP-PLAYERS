@@ -1,4 +1,4 @@
-name: WNBA Data and Chronological Impact Update
+name: WNBA Strict Clean Chronological Impact
 on:
   push:
     branches:
@@ -9,6 +9,7 @@ on:
       - inspect_status/**
       - model_debug/**
       - impact_runs/**
+      - artifact_inspections/**
 permissions:
   contents: write
 jobs:
@@ -25,46 +26,37 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add current_run/run_id.txt
-          git commit -m 'Record active chronological model run [skip ci]'
+          git commit -m 'Record active strict model run [skip ci]'
           git pull --rebase origin chatgpt-wnba-data-update-20260724
           git push origin HEAD:chatgpt-wnba-data-update-20260724
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - run: python -m pip install --quiet numpy
-      - name: Download missing 2026 WNBA games
-        run: python tools/download_wnba_new_games.py --start-id 401857054 --end-id 401857091 --output-dir WNBA_2026_New_Games
-      - name: Build strict chronological lineup impact
+      - name: Build strict clean-only chronological lineup impact
         id: model
         continue-on-error: true
         shell: bash
         run: |
           set -o pipefail
           mkdir -p model_debug
-          python tools/build_chronological_lineup_impact_v3.py --output-dir Chronological_Lineup_Impact 2>&1 | tee model_debug/model.log
+          python tools/build_chronological_lineup_impact_v4_strict.py --output-dir Strict_Chronological_Lineup_Impact 2>&1 | tee model_debug/model.log
           printf '%s\n' "${PIPESTATUS[0]}" > model_debug/exit_code.txt
       - name: Stop if model failed
         run: test "$(cat model_debug/exit_code.txt)" = "0"
       - name: Archive outputs
-        run: |
-          zip -r WNBA_2026_New_Games_Through_401857091.zip WNBA_2026_New_Games
-          zip -r WNBA_2026_Chronological_Lineup_Impact_CSVs.zip Chronological_Lineup_Impact
+        run: zip -r WNBA_2026_Strict_Clean_Chronological_Lineup_Impact.zip Strict_Chronological_Lineup_Impact
       - uses: actions/upload-artifact@v4
         with:
-          name: WNBA-2026-new-games-through-401857091
-          path: WNBA_2026_New_Games_Through_401857091.zip
-          retention-days: 7
-      - uses: actions/upload-artifact@v4
-        with:
-          name: WNBA-2026-chronological-lineup-impact
-          path: WNBA_2026_Chronological_Lineup_Impact_CSVs.zip
+          name: WNBA-2026-strict-clean-chronological-lineup-impact
+          path: WNBA_2026_Strict_Clean_Chronological_Lineup_Impact.zip
           retention-days: 7
       - name: Publish audit files by GitHub API
         env:
           GH_TOKEN: ${{ github.token }}
           RUN_ID: ${{ github.run_id }}
         run: |
-          head -n 21 Chronological_Lineup_Impact/player_game_impact.csv > /tmp/top20.csv
+          head -n 21 Strict_Chronological_Lineup_Impact/player_game_impact.csv > /tmp/top20.csv
           python - <<'PY'
           import base64, json, os, urllib.request
           repo = os.environ['GITHUB_REPOSITORY']
@@ -72,19 +64,20 @@ jobs:
           run_id = os.environ['RUN_ID']
           token = os.environ['GH_TOKEN']
           files = {
-              'audit.json': 'Chronological_Lineup_Impact/audit.json',
-              'methodology.txt': 'Chronological_Lineup_Impact/methodology.txt',
+              'audit.json': 'Strict_Chronological_Lineup_Impact/audit.json',
+              'methodology.txt': 'Strict_Chronological_Lineup_Impact/methodology.txt',
               'top20.csv': '/tmp/top20.csv',
+              'excluded_games.json': 'Strict_Chronological_Lineup_Impact/excluded_games.json',
               'model.log': 'model_debug/model.log',
           }
           for name, local_path in files.items():
               content = open(local_path, 'rb').read()
               payload = json.dumps({
-                  'message': f'Publish chronological impact {name} for run {run_id}',
+                  'message': f'Publish strict chronological impact {name} for run {run_id}',
                   'content': base64.b64encode(content).decode('ascii'),
                   'branch': branch,
               }).encode('utf-8')
-              url = f'https://api.github.com/repos/{repo}/contents/impact_runs/{run_id}/{name}'
+              url = f'https://api.github.com/repos/{repo}/contents/strict_impact_runs/{run_id}/{name}'
               request = urllib.request.Request(url, data=payload, method='PUT', headers={
                   'Authorization': f'Bearer {token}',
                   'Accept': 'application/vnd.github+json',
