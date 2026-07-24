@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/home/runner/work/WNBA-TOP-PLAYERS/WNBA-TOP-PLAYERS/tools/build_chronological_lineup_impact_v2.py", line 634, in <module>
+    main()
+  File "/home/runner/work/WNBA-TOP-PLAYERS/WNBA-TOP-PLAYERS/tools/build_chronological_lineup_impact_v2.py", line 411, in main
+    discovered = discover_game_ids()
+                 ^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/WNBA-TOP-PLAYERS/WNBA-TOP-PLAYERS/tools/build_chronological_lineup_impact_v2.py", line 45, in discover_game_ids
+    raise RuntimeError("Processed 2026 play-by-play file was not available")
+RuntimeError: Processed 2026 play-by-play file was not available
