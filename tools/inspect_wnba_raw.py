@@ -1,4 +1,4 @@
-import json, glob, os
+import csv, gzip, io, json
 from pathlib import Path
 from urllib.request import urlopen
 
@@ -26,5 +26,21 @@ for gid in [401857054,401857055,401857091]:
             subs.append({k:p.get(k) for k in p.keys() if k in ['game_play_number','type.id','type.text','text','team.id','participants.0.athlete.id','participants.1.athlete.id','participants.2.athlete.id','period.number','clock.displayValue','start.game_seconds_remaining']})
     lines.append(f'SUB COUNT {len(subs)}')
     for x in subs[:12]: lines.append(json.dumps(x,sort_keys=True))
+
+# Inspect the processed full-season play-by-play file used by SportsDataverse.
+gz_url='https://raw.githubusercontent.com/sportsdataverse/wehoop-wnba-data/main/wnba/pbp/csv/play_by_play_2026.csv.gz'
+raw=urlopen(gz_url).read()
+text=gzip.decompress(raw).decode('utf-8-sig')
+reader=csv.DictReader(io.StringIO(text))
+lines.append('PROCESSED CSV HEADERS')
+lines.append(json.dumps(reader.fieldnames))
+sub_rows=[]
+for row in reader:
+    if str(row.get('game_id'))=='401857054' and ('sub' in str(row.get('type_text','')).lower() or 'enters' in str(row.get('text','')).lower()):
+        sub_rows.append({k:row.get(k) for k in reader.fieldnames if any(s in k.lower() for s in ['sub','participant','athlete','type','text','period','clock','game_play'])})
+        if len(sub_rows)>=8: break
+lines.append('PROCESSED SUBSTITUTION ROWS')
+for row in sub_rows: lines.append(json.dumps(row,sort_keys=True))
+
 OUT.write_text('\n'.join(lines),encoding='utf-8')
-print('\n'.join(lines[:80]))
+print('inspection complete')
