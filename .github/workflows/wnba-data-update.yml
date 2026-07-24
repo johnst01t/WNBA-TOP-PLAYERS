@@ -40,7 +40,7 @@ jobs:
         run: |
           set -o pipefail
           mkdir -p model_debug
-          python tools/build_chronological_lineup_impact_v2.py --output-dir Chronological_Lineup_Impact 2>&1 | tee model_debug/model.log
+          python tools/build_chronological_lineup_impact_v3.py --output-dir Chronological_Lineup_Impact 2>&1 | tee model_debug/model.log
           printf '%s\n' "${PIPESTATUS[0]}" > model_debug/exit_code.txt
       - name: Record model log
         run: |
