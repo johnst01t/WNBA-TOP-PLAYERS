@@ -35,11 +35,7 @@ jobs:
           fields=list(rows[0])
           with (out/'mismatches.csv').open('w',newline='',encoding='utf-8-sig') as f:
               w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(mismatches)
-          summary={
-              'rows':len(rows),
-              'mismatches':len(mismatches),
-              'first_mismatches':mismatches[:20],
-          }
+          summary={'rows':len(rows),'mismatches':len(mismatches),'first_mismatches':mismatches[:20]}
           (out/'summary.json').write_text(json.dumps(summary,indent=2),encoding='utf-8')
           print(json.dumps(summary,indent=2))
           PY
@@ -49,15 +45,24 @@ jobs:
           RUN_ID: ${{ github.run_id }}
         run: |
           python - <<'PY'
-          import base64,json,os,urllib.request
+          import base64,json,os,urllib.error,urllib.parse,urllib.request
           repo=os.environ['GITHUB_REPOSITORY']; token=os.environ['GH_TOKEN']; run=os.environ['RUN_ID']; branch='chatgpt-wnba-data-update-20260724'
+          headers={'Authorization':f'Bearer {token}','Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','Content-Type':'application/json'}
+          def put(path,content,message):
+              url=f'https://api.github.com/repos/{repo}/contents/{path}'
+              sha=None
+              try:
+                  req=urllib.request.Request(url+'?ref='+urllib.parse.quote(branch),headers=headers)
+                  with urllib.request.urlopen(req) as response: sha=json.load(response).get('sha')
+              except urllib.error.HTTPError as exc:
+                  if exc.code!=404: raise
+              payload={'message':message,'content':base64.b64encode(content).decode(),'branch':branch}
+              if sha: payload['sha']=sha
+              req=urllib.request.Request(url,data=json.dumps(payload).encode(),method='PUT',headers=headers)
+              with urllib.request.urlopen(req) as response: print(path,response.status)
           for name in ['summary.json','mismatches.csv']:
               content=open('artifact_inspect/'+name,'rb').read()
-              payload=json.dumps({'message':f'Publish artifact inspection {run} {name}','content':base64.b64encode(content).decode(),'branch':branch}).encode()
-              url=f'https://api.github.com/repos/{repo}/contents/artifact_inspections/{run}/{name}'
-              req=urllib.request.Request(url,data=payload,method='PUT',headers={'Authorization':f'Bearer {token}','Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','Content-Type':'application/json'})
-              with urllib.request.urlopen(req) as response: print(name,response.status)
-          # Expose this inspection run id.
-          content=(run+'\n').encode()
-          # Unique path only; caller can discover from workflow run if needed.
+              put(f'artifact_inspections/{run}/{name}',content,f'Publish artifact inspection {run} {name}')
+              put(f'artifact_inspections/latest_{name}',content,f'Update latest artifact inspection {name}')
+          put('artifact_inspections/latest_run.txt',(run+'\n').encode(),f'Update latest artifact inspection run {run}')
           PY
