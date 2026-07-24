@@ -1,0 +1,8 @@
+Offensive adjusted points = actual team points while the player was on court minus expected team points from the exact ten-player lineup before the game.
+Defensive adjusted points = expected opponent points while the player was on court minus actual opponent points.
+Net adjusted points = offensive adjusted points + defensive adjusted points.
+Player and lineup strengths are frozen before each game and updated only after that game is complete.
+No box-score production, win bonus, margin bonus, clutch bonus, opponent Elo blend, arbitrary component weights or 0-100 rescaling is used.
+Net adjusted points is the primary total game-impact measure. Net adjusted points per 40 is the rate measure and is separately ranked only for players with at least 10 minutes.
+Limitation: teammates sharing the same stint receive the same stint residual. The model controls for the other nine players chronologically, but a single shared stint cannot establish isolated causality.
+Only timestamped scoring events are attributed to lineups. If ESPN's final scoreboard contains a later correction without a scoring-event timestamp, the point is reported in the audit but is not guessed into a lineup.
